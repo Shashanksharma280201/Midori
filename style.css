@@ -180,13 +180,16 @@ body {
     font-size: clamp(4rem, 10vw, 8rem);
     font-weight: 700;
     letter-spacing: 8px;
-    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    color: #dda0dd;
+    background: linear-gradient(135deg, #dda0dd, #ffc0cb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1.5rem;
-    opacity: 0;
     text-transform: uppercase;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .hero-subtitle {
@@ -197,20 +200,6 @@ body {
     color: var(--color-secondary);
     margin-bottom: 2rem;
     opacity: 0.9;
-}
-
-.hero-title {
-    font-family: var(--font-display);
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 400;
-    line-height: 1.1;
-    margin-bottom: 2rem;
-    color: var(--color-text);
-}
-
-.hero-line {
-    display: block;
-    opacity: 0;
 }
 
 .hero-description {

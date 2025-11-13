@@ -408,59 +408,74 @@ window.addEventListener('scroll', () => {
 
 // GSAP Scroll Animations for Content
 // Hero Logo Animation - triggers immediately on page load
-gsap.from('.hero-logo', {
-    scale: 0.5,
-    opacity: 0,
-    duration: 1.2,
-    delay: 0.3,
-    ease: 'back.out(1.7)'
-});
-
-// Hero Lines Animation
-gsap.from('.hero-line', {
-    y: 100,
-    opacity: 0,
-    duration: 1,
-    delay: 0.8,
-    stagger: 0.2,
-    ease: 'power3.out'
-});
-
-gsap.from('.service-card', {
-    scrollTrigger: {
-        trigger: '.services',
-        start: 'top center+=100',
+gsap.fromTo('.hero-logo',
+    {
+        scale: 0.5,
+        opacity: 0
     },
-    y: 60,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: 'power2.out'
-});
+    {
+        scale: 1,
+        opacity: 1,
+        duration: 1.2,
+        delay: 0.3,
+        ease: 'back.out(1.7)'
+    }
+);
 
-gsap.from('.process-step', {
-    scrollTrigger: {
-        trigger: '.process',
-        start: 'top center+=100',
+// Service Cards Animation
+gsap.fromTo('.service-card',
+    {
+        y: 60,
+        opacity: 0
     },
-    x: -100,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: 'power2.out'
-});
+    {
+        scrollTrigger: {
+            trigger: '.services',
+            start: 'top center+=100',
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power2.out'
+    }
+);
 
-gsap.from('.gallery-item', {
-    scrollTrigger: {
-        trigger: '.gallery',
-        start: 'top center+=100',
+gsap.fromTo('.process-step',
+    {
+        x: -100,
+        opacity: 0
     },
-    scale: 0.8,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1,
-    ease: 'back.out(1.7)'
-});
+    {
+        scrollTrigger: {
+            trigger: '.process',
+            start: 'top center+=100',
+        },
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power2.out'
+    }
+);
+
+gsap.fromTo('.gallery-item',
+    {
+        scale: 0.8,
+        opacity: 0
+    },
+    {
+        scrollTrigger: {
+            trigger: '.gallery',
+            start: 'top center+=100',
+        },
+        scale: 1,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'back.out(1.7)'
+    }
+);
 
 // Contact Form Handler
 document.querySelector('.contact-form').addEventListener('submit', (e) => {
@@ -488,17 +503,23 @@ document.querySelectorAll('.faq-question').forEach(question => {
 });
 
 // Testimonials Scroll Animation
-gsap.from('.testimonial-card', {
-    scrollTrigger: {
-        trigger: '.testimonials',
-        start: 'top center+=100',
+gsap.fromTo('.testimonial-card',
+    {
+        y: 60,
+        opacity: 0
     },
-    y: 60,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: 'power2.out'
-});
+    {
+        scrollTrigger: {
+            trigger: '.testimonials',
+            start: 'top center+=100',
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power2.out'
+    }
+);
 
 // Testimonials Auto-Scrolling Carousel
 class TestimonialsCarousel {
@@ -570,56 +591,80 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // Pricing Cards Scroll Animation
-gsap.from('.pricing-card', {
-    scrollTrigger: {
-        trigger: '.pricing',
-        start: 'top center+=100',
+gsap.fromTo('.pricing-card',
+    {
+        y: 80,
+        opacity: 0
     },
-    y: 80,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: 'back.out(1.2)'
-});
+    {
+        scrollTrigger: {
+            trigger: '.pricing',
+            start: 'top center+=100',
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'back.out(1.2)'
+    }
+);
 
 // FAQ Items Scroll Animation
-gsap.from('.faq-item', {
-    scrollTrigger: {
-        trigger: '.faq',
-        start: 'top center+=100',
+gsap.fromTo('.faq-item',
+    {
+        x: -60,
+        opacity: 0
     },
-    x: -60,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1,
-    ease: 'power2.out'
-});
+    {
+        scrollTrigger: {
+            trigger: '.faq',
+            start: 'top center+=100',
+        },
+        x: 0,
+        opacity: 1,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: 'power2.out'
+    }
+);
 
 // Hero Stats Animation
-gsap.from('.stat', {
-    scrollTrigger: {
-        trigger: '.hero-stats',
-        start: 'top center+=200',
+gsap.fromTo('.stat',
+    {
+        scale: 0.5,
+        opacity: 0
     },
-    scale: 0.5,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: 'back.out(1.7)'
-});
+    {
+        scrollTrigger: {
+            trigger: '.hero-stats',
+            start: 'top center+=200',
+        },
+        scale: 1,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'back.out(1.7)'
+    }
+);
 
 // About Values Animation
-gsap.from('.value-item', {
-    scrollTrigger: {
-        trigger: '.about-values',
-        start: 'top center+=100',
+gsap.fromTo('.value-item',
+    {
+        y: 60,
+        opacity: 0
     },
-    y: 60,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.2,
-    ease: 'power2.out'
-});
+    {
+        scrollTrigger: {
+            trigger: '.about-values',
+            start: 'top center+=100',
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power2.out'
+    }
+);
 
 // Flower and Vase Selection
 document.querySelectorAll('.flower-btn').forEach(btn => {

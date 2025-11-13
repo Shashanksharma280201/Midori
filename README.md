@@ -4,21 +4,21 @@ A stunning, interactive 3D website showcasing premium flower arrangement service
 
 ## Features
 
-### 🌸 Advanced 3D Graphics
+### Advanced 3D Graphics
 - **Custom GLSL Shaders** - Hand-crafted vertex and fragment shaders for realistic flower petals
 - **Floating Particle Systems** - 50+ animated flower petals with individual physics
 - **3D Flower Models** - Procedurally generated flowers with dynamic lighting
 - **Ambient Particles** - 200 particles creating depth and atmosphere
 - **Interactive Camera** - Mouse parallax and scroll-based transformations
 
-### 🏠 Interactive Placement Visualizer
+### Interactive Placement Visualizer
 - **4 Room Types** - Living room, office, dining room, and entrance
 - **3D Room Scenes** - Fully rendered 3D environments with furniture and lighting
 - **Real-time Flower Arrangements** - Different arrangements for each room type
 - **Interactive Hotspots** - Clickable points showing placement details
 - **Educational Content** - Explains lighting, height, color harmony, and vessel choices
 
-### ✨ Premium UI/UX
+### Premium UI/UX
 - **Glassmorphism Design** - Frosted glass effects with backdrop blur
 - **Smooth Animations** - GSAP-powered scroll triggers and stagger effects
 - **Elegant Typography** - Cormorant Garamond + Montserrat pairing
@@ -139,11 +139,3 @@ gsap.from('.element', {
 - Firefox (latest)
 - Safari (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
-
-## License
-
-All rights reserved - Midori Flowers © 2024
-
----
-
-**Built with attention to detail and premium quality in mind.** 🌸
