@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midori Flowers - Premium Floral Design & Curation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Three.js Canvas Background -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">MIDORI</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#visualizer" class="nav-link">Placement Guide</a>
+            <a href="#process" class="nav-link">Our Process</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-cta">Book Consultation</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+        <div class="hero-content">
+            <div class="hero-logo">MIDORI</div>
+            <div class="hero-subtitle">Premium Floral Curation</div>
+            <h1 class="hero-title">
+                <span class="hero-line">Elevate Your</span>
+                <span class="hero-line">Space with</span>
+                <span class="hero-line">Exquisite Blooms</span>
+            </h1>
+            <p class="hero-description">
+                We source premium flowers directly from award-winning growers and transform them into bespoke arrangements.
+                From the first consultation to professional in-home placement, we deliver a complete luxury experience.
+                <strong>Over 500 satisfied clients trust us with their most important spaces.</strong>
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2,000+</div>
+                    <div class="stat-label">Arrangements</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+            <div class="hero-cta-group">
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Book Free Consultation</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">View Our Work</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to discover</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="section-header">
+            <div class="section-subtitle">What We Offer</div>
+            <h2 class="section-title">Premium Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3 class="service-title">Bulk Flower Sourcing</h3>
+                <p class="service-description">
+                    Access to premium, fresh flowers sourced directly from the finest growers.
+                    We select only the highest quality blooms for our discerning clients.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </div>
+                <h3 class="service-title">Curated Arrangements</h3>
+                <p class="service-description">
+                    Bespoke floral designs tailored to your aesthetic, space, and occasion.
+                    Each arrangement is a unique work of art.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <h3 class="service-title">Professional Placement</h3>
+                <p class="service-description">
+                    Expert styling and placement in your home or venue. We ensure every arrangement
+                    complements its environment perfectly.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                </div>
+                <h3 class="service-title">Vases & Vessels</h3>
+                <p class="service-description">
+                    Carefully selected vases, pots, and vessels that enhance the beauty of each arrangement.
+                    Form meets function in every piece.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Placement Visualizer Section -->
+    <section id="visualizer" class="section visualizer">
+        <div class="section-header">
+            <div class="section-subtitle">Interactive Experience</div>
+            <h2 class="section-title">Visualize Perfect Placement</h2>
+            <p class="section-description">
+                Explore how our expert florists position arrangements in different spaces.
+                Click on any scenario to see the placement principles in action.
+            </p>
+        </div>
+
+        <!-- Flower & Vase Customization -->
+        <div class="customization-panel">
+            <div class="customization-section">
+                <h3>Choose Your Flowers</h3>
+                <div class="flower-selector">
+                    <button class="flower-btn active" data-flower="rose">
+                        <div class="flower-preview" style="background: linear-gradient(135deg, #ff69b4, #ffc0cb);"></div>
+                        <span>Rose</span>
+                    </button>
+                    <button class="flower-btn" data-flower="peony">
+                        <div class="flower-preview" style="background: linear-gradient(135deg, #ffe4e1, #fff0f5);"></div>
+                        <span>Peony</span>
+                    </button>
+                    <button class="flower-btn" data-flower="orchid">
+                        <div class="flower-preview" style="background: linear-gradient(135deg, #dda0dd, #ee82ee);"></div>
+                        <span>Orchid</span>
+                    </button>
+                    <button class="flower-btn" data-flower="lily">
+                        <div class="flower-preview" style="background: linear-gradient(135deg, #fff0f5, #ffe4e1);"></div>
+                        <span>Lily</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="customization-section">
+                <h3>Choose Your Vase</h3>
+                <div class="vase-selector">
+                    <button class="vase-btn active" data-vase="ceramic">
+                        <div class="vase-preview" style="background: linear-gradient(135deg, #e8dcc8, #d4c5b0);"></div>
+                        <span>Ceramic</span>
+                    </button>
+                    <button class="vase-btn" data-vase="modern">
+                        <div class="vase-preview" style="background: linear-gradient(135deg, #4a4a4a, #2c2c2c);"></div>
+                        <span>Modern</span>
+                    </button>
+                    <button class="vase-btn" data-vase="crystal">
+                        <div class="vase-preview" style="background: linear-gradient(135deg, #f5f0e8, #ffffff);"></div>
+                        <span>Crystal</span>
+                    </button>
+                    <button class="vase-btn" data-vase="rustic">
+                        <div class="vase-preview" style="background: linear-gradient(135deg, #d4a574, #a89080);"></div>
+                        <span>Rustic</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Selector -->
+        <div class="room-selector">
+            <button class="room-btn active" data-room="living">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <span>Living Room</span>
+            </button>
+            <button class="room-btn" data-room="office">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <span>Office</span>
+            </button>
+            <button class="room-btn" data-room="dining">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="8" y1="6" x2="21" y2="6"/>
+                    <line x1="8" y1="12" x2="21" y2="12"/>
+                    <line x1="8" y1="18" x2="21" y2="18"/>
+                    <line x1="3" y1="6" x2="3.01" y2="6"/>
+                    <line x1="3" y1="12" x2="3.01" y2="12"/>
+                    <line x1="3" y1="18" x2="3.01" y2="18"/>
+                </svg>
+                <span>Dining Room</span>
+            </button>
+            <button class="room-btn" data-room="entrance">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                </svg>
+                <span>Entrance</span>
+            </button>
+        </div>
+
+        <!-- 3D Visualizer Canvas -->
+        <div class="visualizer-container">
+            <canvas id="placement-canvas"></canvas>
+
+            <!-- Control Hints -->
+            <div class="visualizer-controls">
+                <div class="control-hint">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    <span>Drag to rotate in 3D</span>
+                </div>
+                <div class="control-hint">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <span>Scroll to zoom</span>
+                </div>
+                <div class="control-hint">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6M7.05 7.05l4.95 4.95m0 0l4.95 4.95m-9.9 0l4.95-4.95"/>
+                    </svg>
+                    <span>Auto-rotates</span>
+                </div>
+            </div>
+
+            <!-- Info Overlay -->
+            <div class="placement-info">
+                <h3 class="placement-title">Living Room Sofa Corner</h3>
+                <div class="placement-details">
+                    <div class="placement-detail">
+                        <div class="detail-icon">💡</div>
+                        <div class="detail-content">
+                            <strong>Lighting:</strong> Natural side lighting enhances the flower colors
+                        </div>
+                    </div>
+                    <div class="placement-detail">
+                        <div class="detail-icon">📏</div>
+                        <div class="detail-content">
+                            <strong>Height:</strong> Eye level when seated for optimal viewing
+                        </div>
+                    </div>
+                    <div class="placement-detail">
+                        <div class="detail-icon">🎨</div>
+                        <div class="detail-content">
+                            <strong>Color Harmony:</strong> Soft pinks complement neutral furniture tones
+                        </div>
+                    </div>
+                    <div class="placement-detail">
+                        <div class="detail-icon">🌸</div>
+                        <div class="detail-content">
+                            <strong>Vessel:</strong> Elegant ceramic vase matches the room's aesthetic
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Hotspots -->
+            <div class="hotspot hotspot-1" data-info="flowers">
+                <div class="hotspot-pulse"></div>
+                <div class="hotspot-tooltip">
+                    <strong>Premium Peonies</strong>
+                    <p>Soft pink blooms create a welcoming atmosphere</p>
+                </div>
+            </div>
+            <div class="hotspot hotspot-2" data-info="vase">
+                <div class="hotspot-pulse"></div>
+                <div class="hotspot-tooltip">
+                    <strong>Hand-Crafted Vase</strong>
+                    <p>Artisan ceramic with matte finish</p>
+                </div>
+            </div>
+            <div class="hotspot hotspot-3" data-info="position">
+                <div class="hotspot-pulse"></div>
+                <div class="hotspot-tooltip">
+                    <strong>Strategic Position</strong>
+                    <p>Corner placement balances the room's visual weight</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Scenarios -->
+        <div class="scenarios-grid">
+            <div class="scenario-card" data-scenario="living">
+                <div class="scenario-image">
+                    <div class="scenario-placeholder living-room-bg"></div>
+                </div>
+                <div class="scenario-content">
+                    <h3>Living Room Elegance</h3>
+                    <p>Side table arrangements that complement your seating area without overwhelming the space.</p>
+                    <ul class="scenario-tips">
+                        <li>Height: 12-18 inches for visibility</li>
+                        <li>Placement: Next to sofa or armchair</li>
+                        <li>Style: Soft, organic arrangements</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="scenario-card" data-scenario="office">
+                <div class="scenario-image">
+                    <div class="scenario-placeholder office-bg"></div>
+                </div>
+                <div class="scenario-content">
+                    <h3>Executive Office</h3>
+                    <p>Sophisticated desk arrangements that inspire productivity and create a professional atmosphere.</p>
+                    <ul class="scenario-tips">
+                        <li>Height: 8-12 inches to avoid sightlines</li>
+                        <li>Placement: Corner of desk or credenza</li>
+                        <li>Style: Structured, architectural blooms</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="scenario-card" data-scenario="dining">
+                <div class="scenario-image">
+                    <div class="scenario-placeholder dining-bg"></div>
+                </div>
+                <div class="scenario-content">
+                    <h3>Dining Centerpiece</h3>
+                    <p>Low, lush arrangements that enhance conversation without blocking views across the table.</p>
+                    <ul class="scenario-tips">
+                        <li>Height: 6-10 inches maximum</li>
+                        <li>Placement: Table center or runner</li>
+                        <li>Style: 360° viewing, compact design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="scenario-card" data-scenario="entrance">
+                <div class="scenario-image">
+                    <div class="scenario-placeholder entrance-bg"></div>
+                </div>
+                <div class="scenario-content">
+                    <h3>Grand Entrance</h3>
+                    <p>Statement pieces that create an impressive first impression in foyers and entryways.</p>
+                    <ul class="scenario-tips">
+                        <li>Height: 24-36 inches for impact</li>
+                        <li>Placement: Console table or pedestal</li>
+                        <li>Style: Bold, dramatic compositions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section process">
+        <div class="section-header">
+            <div class="section-subtitle">How We Work</div>
+            <h2 class="section-title">Our Meticulous Process</h2>
+        </div>
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="process-number">01</div>
+                <div class="process-content">
+                    <h3 class="process-title">Consultation</h3>
+                    <p class="process-description">
+                        We begin with an in-depth consultation to understand your vision,
+                        space, and preferences. Every detail matters.
+                    </p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">02</div>
+                <div class="process-content">
+                    <h3 class="process-title">Curation</h3>
+                    <p class="process-description">
+                        Our experts hand-select premium flowers and complementary vessels,
+                        creating a cohesive design concept for your approval.
+                    </p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">03</div>
+                <div class="process-content">
+                    <h3 class="process-title">Creation</h3>
+                    <p class="process-description">
+                        Master florists craft each arrangement with precision and artistry,
+                        ensuring perfection in every petal and stem.
+                    </p>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">04</div>
+                <div class="process-content">
+                    <h3 class="process-title">Placement</h3>
+                    <p class="process-description">
+                        We deliver and professionally place each arrangement in your space,
+                        optimizing lighting, positioning, and overall aesthetic harmony.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="section-header">
+            <div class="section-subtitle">Our Work</div>
+            <h2 class="section-title">Floral Masterpieces</h2>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="arrangements">
+                <div class="gallery-image-placeholder rose-gradient">
+                    <div class="placeholder-text">Elegant Rose Collection</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="events">
+                <div class="gallery-image-placeholder event-gradient">
+                    <div class="placeholder-text">Corporate Event Design</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="residential">
+                <div class="gallery-image-placeholder luxury-gradient">
+                    <div class="placeholder-text">Luxury Home Styling</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="arrangements">
+                <div class="gallery-image-placeholder orchid-gradient">
+                    <div class="placeholder-text">Orchid Centerpiece</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="seasonal">
+                <div class="gallery-image-placeholder spring-gradient">
+                    <div class="placeholder-text">Spring Collection</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="residential">
+                <div class="gallery-image-placeholder penthouse-gradient">
+                    <div class="placeholder-text">Penthouse Arrangement</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section about">
+        <div class="about-container">
+            <div class="about-content">
+                <div class="section-subtitle">Our Story</div>
+                <h2 class="section-title">Crafting Beauty Since 2009</h2>
+                <div class="about-text">
+                    <p>
+                        Midori Flowers was born from a simple belief: flowers are not mere decoration — they are living art that transforms spaces and elevates everyday moments into extraordinary experiences.
+                    </p>
+                    <p>
+                        Founded by master florist Yuki Tanaka, who trained under renowned floral designers in Tokyo and Paris, we've spent over 15 years perfecting the delicate balance between botanical science and artistic expression. What started as a boutique studio has grown into a trusted partner for the city's most discerning homeowners, Fortune 500 companies, and celebrated event planners.
+                    </p>
+                    <p>
+                        We travel directly to flower farms across the Netherlands, Ecuador, and Japan, hand-selecting only the most exquisite blooms. Our relationships with artisan ceramicists and vessel makers ensure that every element of your arrangement is thoughtfully curated.
+                    </p>
+                    <p>
+                        But what truly sets us apart is our placement philosophy. We don't just deliver flowers — we study your space, understand how light moves through your rooms, consider sight lines and color harmonies, then position each arrangement to maximize its impact. It's floral design meets interior architecture.
+                    </p>
+                </div>
+                <div class="about-values">
+                    <div class="value-item">
+                        <div class="value-icon">🌸</div>
+                        <h4>Uncompromising Quality</h4>
+                        <p>Every bloom is personally inspected and sourced from award-winning growers</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🎨</div>
+                        <h4>Artistic Excellence</h4>
+                        <p>Our team includes trained floral designers with backgrounds in fine art and design</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">✨</div>
+                        <h4>Holistic Approach</h4>
+                        <p>We consider architecture, lighting, color theory, and spatial dynamics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="section-header">
+            <div class="section-subtitle">Client Love</div>
+            <h2 class="section-title">What Our Clients Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <p class="testimonial-text">
+                    "Midori Flowers transformed our corporate lobby into an absolute showstopper. The attention to detail in both the arrangement and placement was extraordinary. Our clients constantly compliment the fresh, vibrant energy."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <div class="author-name">Sarah Chen</div>
+                        <div class="author-title">CEO, TechVision Inc.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <p class="testimonial-text">
+                    "We've used Midori for our home for over 3 years. The quality never wavers, and they always know exactly what works for our space. It's like having a personal florist who truly understands our aesthetic."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <div class="author-name">Michael & Jennifer Rodriguez</div>
+                        <div class="author-title">Pacific Heights Residents</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <p class="testimonial-text">
+                    "From wedding to weekly office arrangements, Midori has been our go-to. They source the most exquisite blooms and their placement service is genius - they consider lighting, color theory, everything!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <div class="author-name">Amanda Foster</div>
+                        <div class="author-title">Event Planner, Elegance Events</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section pricing">
+        <div class="section-header">
+            <div class="section-subtitle">Investment</div>
+            <h2 class="section-title">Service Packages</h2>
+            <p class="section-description">
+                Transparent pricing for premium service. All packages include consultation, sourcing, arrangement design, delivery, and professional placement.
+            </p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Signature</h3>
+                    <div class="pricing-subtitle">Perfect for homes</div>
+                </div>
+                <div class="pricing-price">
+                    <span class="price-amount">$350</span>
+                    <span class="price-period">/arrangement</span>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ Personal consultation</li>
+                    <li>✓ Premium seasonal flowers</li>
+                    <li>✓ Custom arrangement design</li>
+                    <li>✓ Artisan vase included</li>
+                    <li>✓ Professional placement</li>
+                    <li>✓ Weekly refresh available</li>
+                </ul>
+                <button class="btn btn-secondary btn-full" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Premium</h3>
+                    <div class="pricing-subtitle">Ideal for offices & events</div>
+                </div>
+                <div class="pricing-price">
+                    <span class="price-amount">$850</span>
+                    <span class="price-period">/arrangement</span>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ In-depth design consultation</li>
+                    <li>✓ Exotic & rare blooms</li>
+                    <li>✓ Multi-piece arrangements</li>
+                    <li>✓ Designer vase collection</li>
+                    <li>✓ Strategic placement service</li>
+                    <li>✓ Bi-weekly maintenance</li>
+                    <li>✓ Same-day delivery</li>
+                </ul>
+                <button class="btn btn-primary btn-full" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Bespoke</h3>
+                    <div class="pricing-subtitle">For luxury spaces</div>
+                </div>
+                <div class="pricing-price">
+                    <span class="price-amount">Custom</span>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ Dedicated floral designer</li>
+                    <li>✓ Unlimited consultations</li>
+                    <li>✓ Exclusive rare specimens</li>
+                    <li>✓ Museum-quality vessels</li>
+                    <li>✓ Full-service maintenance</li>
+                    <li>✓ Multiple locations</li>
+                    <li>✓ Priority 24/7 service</li>
+                    <li>✓ Seasonal portfolio</li>
+                </ul>
+                <button class="btn btn-secondary btn-full" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq">
+        <div class="section-header">
+            <div class="section-subtitle">Questions</div>
+            <h2 class="section-title">Frequently Asked</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I book a consultation?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Simply fill out our contact form or call us directly. We'll schedule a convenient time to visit your space (or discuss via video call) to understand your vision, measure the area, assess lighting, and discuss your preferences. Consultations are always complimentary.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What's included in the placement service?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Our placement experts consider lighting angles, sight lines, color harmony with your existing decor, and optimal viewing positions. We physically place the arrangement, adjust for perfect positioning, and ensure everything is stable and safe. Think of it as floral interior design.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How long do arrangements last?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>With proper care, our arrangements typically last 7-14 days depending on the flowers used. We source only the freshest blooms and provide detailed care instructions. Many clients opt for our weekly or bi-weekly refresh service to maintain continuous beauty.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you provide vases, or do I need my own?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>All our packages include a carefully selected vase that complements both the flowers and your space. We have relationships with artisan ceramicists and source vessels specifically for each arrangement. The vase is yours to keep.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can you work within a specific color palette?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! During consultation, we discuss your color preferences, existing decor, and the mood you want to create. We can work within specific palettes, match brand colors for corporate clients, or create seasonal themes. Customization is our specialty.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What areas do you serve?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>We primarily serve the greater metropolitan area within a 50-mile radius. For premium and bespoke clients, we're happy to discuss extended service areas. Corporate contracts and special events may qualify for travel to additional locations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="section-subtitle">Get in Touch</div>
+                <h2 class="section-title">Let's Create Something Beautiful</h2>
+                <p class="contact-description">
+                    Ready to transform your space with premium floral design?
+                    Book a consultation with our team today.
+                </p>
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📧</div>
+                        <div>
+                            <div class="contact-detail-label">Email</div>
+                            <div class="contact-detail-value">hello@midoriflowers.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📱</div>
+                        <div>
+                            <div class="contact-detail-label">Phone</div>
+                            <div class="contact-detail-value">+1 (555) 123-4567</div>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📍</div>
+                        <div>
+                            <div class="contact-detail-label">Showroom</div>
+                            <div class="contact-detail-value">By Appointment Only</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" class="form-input">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Tell us about your vision..." class="form-input form-textarea" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Request Consultation</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <div class="footer-logo">MIDORI FLOWERS</div>
+                <p class="footer-tagline">Premium floral curation for discerning clients since 2009</p>
+                <div class="footer-contact">
+                    <p><strong>Email:</strong> hello@midoriflowers.com</p>
+                    <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                    <p><strong>Hours:</strong> Mon-Sat, 9AM-6PM</p>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Bulk Flower Sourcing</a></li>
+                    <li><a href="#services">Curated Arrangements</a></li>
+                    <li><a href="#services">Professional Placement</a></li>
+                    <li><a href="#services">Vases & Vessels</a></li>
+                    <li><a href="#pricing">View Pricing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#gallery">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul class="footer-links footer-social-links">
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+                </ul>
+                <div class="footer-newsletter">
+                    <p>Subscribe to our newsletter for seasonal inspiration</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email" class="newsletter-input">
+                        <button class="newsletter-btn">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 Midori Flowers. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#terms">Terms of Service</a>
+                    <span>•</span>
+                    <a href="#accessibility">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
