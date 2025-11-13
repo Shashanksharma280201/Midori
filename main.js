@@ -521,16 +521,20 @@ gsap.fromTo('.testimonial-card',
     }
 );
 
-// Testimonials Auto-Scrolling Carousel
+// Testimonials Auto-Scrolling Carousel with Cursor Parallax
 class TestimonialsCarousel {
     constructor() {
         this.container = document.querySelector('.testimonials-grid');
         if (!this.container) return;
 
+        this.section = document.querySelector('.testimonials');
         this.cards = Array.from(document.querySelectorAll('.testimonial-card'));
         this.scrollSpeed = 0.5; // pixels per frame
         this.isPaused = false;
         this.scrollPosition = 0;
+        this.cursorOffset = 0; // Cursor-based parallax offset
+        this.targetCursorOffset = 0;
+        this.isHoveringSection = false;
 
         this.init();
     }
@@ -551,6 +555,34 @@ class TestimonialsCarousel {
             card.addEventListener('mouseleave', () => this.resume());
         });
 
+        // Track mouse movement over testimonials section
+        this.section.addEventListener('mouseenter', () => {
+            this.isHoveringSection = true;
+        });
+
+        this.section.addEventListener('mouseleave', () => {
+            this.isHoveringSection = false;
+            this.targetCursorOffset = 0; // Reset when leaving section
+        });
+
+        this.section.addEventListener('mousemove', (e) => {
+            if (!this.isHoveringSection) return;
+
+            // Get mouse position relative to section
+            const rect = this.section.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const sectionWidth = rect.width;
+
+            // Calculate normalized position (-1 to 1)
+            const normalizedX = (mouseX / sectionWidth) * 2 - 1;
+
+            // Apply parallax effect in OPPOSITE direction
+            // Mouse right (+1) = cards move left (negative)
+            // Mouse left (-1) = cards move right (positive)
+            const parallaxStrength = 100; // Maximum offset in pixels
+            this.targetCursorOffset = -normalizedX * parallaxStrength;
+        });
+
         // Start animation
         this.animate();
     }
@@ -564,6 +596,9 @@ class TestimonialsCarousel {
     }
 
     animate() {
+        // Smooth interpolation for cursor offset
+        this.cursorOffset += (this.targetCursorOffset - this.cursorOffset) * 0.1;
+
         if (!this.isPaused) {
             this.scrollPosition += this.scrollSpeed;
 
@@ -576,10 +611,11 @@ class TestimonialsCarousel {
             if (this.scrollPosition >= totalWidth) {
                 this.scrollPosition = 0;
             }
-
-            // Apply transform
-            this.container.style.transform = `translateX(-${this.scrollPosition}px)`;
         }
+
+        // Apply transform with both auto-scroll and cursor parallax
+        const finalPosition = this.scrollPosition - this.cursorOffset;
+        this.container.style.transform = `translateX(-${finalPosition}px)`;
 
         requestAnimationFrame(() => this.animate());
     }

@@ -139,3 +139,4 @@ gsap.from('.element', {
 - Firefox (latest)
 - Safari (latest)
 - Mobile browsers (iOS Safari, Chrome Mobile)
+
