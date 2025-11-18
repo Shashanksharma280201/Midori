@@ -45,9 +45,10 @@ const potsGroup = new THREE.Group();
 
 // ===== ELEGANT POT/VASE WIREFRAMES =====
 // Create beautiful pot outlines - spread across the scene
-const potCount = 18; // Increased for richer background
+const potCount = 18; // General pots across scene
+const leftSidePots = 8; // Extra pots for left side
 
-for (let i = 0; i < potCount; i++) {
+for (let i = 0; i < potCount + leftSidePots; i++) {
     const points = [];
 
     // Different pot/vase styles
@@ -101,10 +102,18 @@ for (let i = 0; i < potCount; i++) {
 
     const pot = new THREE.Mesh(potGeometry, potMaterial);
 
-    // Position - spread naturally across wider area
-    pot.position.x = (Math.random() - 0.5) * 35;
-    pot.position.y = (Math.random() - 0.5) * 30;
-    pot.position.z = (Math.random() - 0.5) * 18;
+    // Position logic - extra pots on left side
+    if (i >= potCount) {
+        // Left side pots (bias towards left)
+        pot.position.x = -Math.random() * 25 - 10; // -35 to -10 (left side)
+        pot.position.y = (Math.random() - 0.5) * 35;
+        pot.position.z = (Math.random() - 0.5) * 20;
+    } else {
+        // General distribution across scene
+        pot.position.x = (Math.random() - 0.5) * 35;
+        pot.position.y = (Math.random() - 0.5) * 30;
+        pot.position.z = (Math.random() - 0.5) * 18;
+    }
 
     // More varied scale for depth
     const scale = Math.random() * 1.0 + 0.4;
