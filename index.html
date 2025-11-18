@@ -20,10 +20,9 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">🌿</span>
-                <span class="logo-text">MIDORI GARDENS</span>
-            </div>
+            <a href="#" class="nav-logo">
+                <img src="assets/images/Midori-Logo.png" alt="Midori Gardens Logo">
+            </a>
             <div class="nav-center">
                 <a href="#collections" class="nav-link">Collections</a>
                 <a href="#materials" class="nav-link">Craftsmanship</a>
@@ -45,7 +44,36 @@
                     </svg>
                     <span class="cart-count">0</span>
                 </button>
+                <button class="nav-icon-btn mobile-menu-btn" id="mobileMenuBtn">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
             </div>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <div class="nav-logo">
+                    <img src="assets/images/Midori-Logo.png" alt="Midori Gardens Logo">
+                </div>
+                <button class="mobile-menu-close" id="mobileMenuClose">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="mobile-menu-links">
+                <a href="#collections" class="mobile-nav-link">Collections</a>
+                <a href="#materials" class="mobile-nav-link">Craftsmanship</a>
+                <a href="#styling" class="mobile-nav-link">Styling Guide</a>
+                <a href="#about" class="mobile-nav-link">Our Story</a>
+                <a href="#visualizer" class="mobile-nav-link mobile-nav-cta">Try AI Visualizer</a>
+            </div>
+        </div>
         </div>
     </nav>
 
@@ -53,7 +81,7 @@
     <section class="hero-luxury">
         <div class="hero-content-wrapper">
             <div class="hero-text-side">
-                <p class="hero-eyebrow">AI-Powered Smart Placement — Est. 2015</p>
+                <p class="hero-eyebrow">AI-Powered Smart Placement </p>
                 <h1 class="hero-title">See Your Vase<br/>Before It Arrives</h1>
                 <p class="hero-subtitle">
                     Our revolutionary AI technology analyzes your space's lighting, colors, and style in seconds.
@@ -61,7 +89,7 @@
                     <strong>No guesswork. No returns. Just perfect matches for your home.</strong>
                 </p>
                 <div class="hero-cta-group">
-                    <a href="#visualizer" class="btn btn-primary-dark">Try AI Visualizer</a>
+                    <!-- <a href="#visualizer" class="btn btn-primary-dark">Try AI Visualizer</a> -->
                     <a href="#collections" class="btn-text-link">
                         Browse Collection
                         <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
@@ -829,8 +857,7 @@
         <div class="footer-main">
             <div class="footer-column footer-brand">
                 <div class="footer-logo">
-                    <span class="logo-icon">🌿</span>
-                    <span class="logo-text">MIDORI GARDENS</span>
+                    <img src="assets/images/Midori-Logo.png" alt="Midori Gardens Logo">
                 </div>
                 <p class="footer-tagline">
                     Curating artisan planters and vessels for discerning spaces since 2015.

@@ -70,8 +70,16 @@ class AIVisualizer {
             fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
         }
 
-        // Drag and drop for upload area
+        // Make upload area clickable
         if (uploadArea) {
+            uploadArea.addEventListener('click', (e) => {
+                // Don't trigger if clicking the button itself
+                if (e.target !== uploadBtn && !uploadBtn.contains(e.target)) {
+                    fileInput.click();
+                }
+            });
+
+            // Drag and drop for upload area
             uploadArea.addEventListener('dragover', (e) => {
                 e.preventDefault();
                 uploadArea.classList.add('dragover');
@@ -100,9 +108,14 @@ class AIVisualizer {
         if (downloadBtn) downloadBtn.addEventListener('click', () => this.download());
         if (newImageBtn) newImageBtn.addEventListener('click', () => this.newImage());
 
-        // Canvas interactions
+        // Canvas interactions - mouse events
         this.canvas.addEventListener('click', (e) => this.handleCanvasClick(e));
         this.canvas.addEventListener('mousemove', (e) => this.handleCanvasMouseMove(e));
+
+        // Canvas interactions - touch events for mobile
+        this.canvas.addEventListener('touchstart', (e) => this.handleCanvasTouchStart(e));
+        this.canvas.addEventListener('touchmove', (e) => this.handleCanvasTouchMove(e));
+        this.canvas.addEventListener('touchend', (e) => this.handleCanvasTouchEnd(e));
     }
 
     handleFileSelect(event) {
@@ -203,10 +216,14 @@ class AIVisualizer {
 
         document.getElementById('recommendationsList').innerHTML = listHTML;
 
-        // Add drag listeners to recommendations
+        // Add drag listeners to recommendations (desktop)
         document.querySelectorAll('.recommendation-card').forEach(card => {
             card.addEventListener('dragstart', (e) => this.handleDragStart(e));
             card.addEventListener('dragend', () => this.handleDragEnd());
+
+            // Touch events for mobile
+            card.addEventListener('touchstart', (e) => this.handleRecommendationTouchStart(e));
+            card.addEventListener('click', (e) => this.handleRecommendationClick(e));
         });
     }
 
@@ -297,6 +314,76 @@ class AIVisualizer {
         document.getElementById('recommendationsPanel').style.display = 'none';
         document.getElementById('uploadArea').style.display = 'flex';
         document.getElementById('fileInput').value = '';
+    }
+
+    // Touch event handlers for mobile devices
+    handleRecommendationTouchStart(event) {
+        const card = event.currentTarget;
+        const productData = JSON.parse(card.dataset.product);
+        this.draggingVase = productData;
+        card.style.opacity = '0.5';
+
+        // Provide visual feedback
+        card.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+        }, 200);
+    }
+
+    handleRecommendationClick(event) {
+        // On mobile, clicking a recommendation selects it
+        const card = event.currentTarget;
+        const productData = JSON.parse(card.dataset.product);
+
+        // Remove previous selection
+        document.querySelectorAll('.recommendation-card').forEach(c => {
+            c.style.borderColor = 'transparent';
+        });
+
+        // Highlight selected
+        card.style.borderColor = 'var(--color-secondary)';
+        this.draggingVase = productData;
+
+        // Show message on mobile
+        if ('ontouchstart' in window) {
+            const helpText = document.querySelector('.panel-help span');
+            if (helpText) {
+                helpText.textContent = 'Now tap on your image where you want to place this vase';
+            }
+        }
+    }
+
+    handleCanvasTouchStart(event) {
+        event.preventDefault();
+        if (!this.draggingVase) return;
+
+        const rect = this.canvas.getBoundingClientRect();
+        const touch = event.touches[0];
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+
+        this.placeVase(x, y, this.draggingVase);
+        this.draggingVase = null;
+
+        // Reset border colors
+        document.querySelectorAll('.recommendation-card').forEach(c => {
+            c.style.borderColor = 'transparent';
+        });
+
+        // Reset help text
+        const helpText = document.querySelector('.panel-help span');
+        if (helpText) {
+            helpText.textContent = 'Drag vases from recommendations onto your image';
+        }
+    }
+
+    handleCanvasTouchMove(event) {
+        event.preventDefault();
+    }
+
+    handleCanvasTouchEnd(event) {
+        event.preventDefault();
     }
 }
 
