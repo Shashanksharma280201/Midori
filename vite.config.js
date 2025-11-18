@@ -7,11 +7,19 @@ export default defineConfig({
         main: './index.html'
       },
       output: {
-        entryFileNames: '[name].js',
-        chunkFileNames: '[name].js',
-        assetFileNames: '[name].[ext]'
+        entryFileNames: '[name]-[hash].js',
+        chunkFileNames: '[name]-[hash].js',
+        assetFileNames: '[name].[ext]',
+        manualChunks: {
+          // Split Three.js into separate chunk for better caching
+          'three-vendor': ['three'],
+          // Split GSAP into separate chunk
+          'gsap-vendor': ['gsap']
+        }
       }
-    }
+    },
+    // Increase chunk size warning limit to 600kb
+    chunkSizeWarningLimit: 600
   },
   publicDir: 'assets'
 });
