@@ -141,7 +141,6 @@ const leafMaterial = new THREE.ShaderMaterial({
     },
     vertexShader: `
         attribute float scale;
-        attribute vec3 color;
         varying float vScale;
         varying vec3 vColor;
         uniform float time;
