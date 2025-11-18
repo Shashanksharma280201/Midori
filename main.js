@@ -34,30 +34,118 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 camera.position.z = 8;
 
-// ===== SIMPLE ELEGANT PARTICLES =====
-const leafGeometry = new THREE.BufferGeometry();
-const leafCount = 200; // Increased from 100
-const positions = new Float32Array(leafCount * 3);
-const scales = new Float32Array(leafCount);
-const colors = new Float32Array(leafCount * 3);
+// Lighting for vase visibility
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
 
+const pointLight1 = new THREE.PointLight(0xE8DED0, 1.2); // Warm beige light
+pointLight1.position.set(10, 10, 10);
+scene.add(pointLight1);
+
+const pointLight2 = new THREE.PointLight(0x7D9D72, 0.8); // Sage accent
+pointLight2.position.set(-10, -10, 5);
+scene.add(pointLight2);
+
+// Color palette
 const earthToneColors = [
     new THREE.Color(0xC17459), // Terracotta
     new THREE.Color(0x8B7355), // Taupe
-    new THREE.Color(0x7D9D72), // Sage
+    new THREE.Color(0x7D9D72), // Sage green
     new THREE.Color(0xB8C5AE), // Light sage
     new THREE.Color(0xE8DED0)  // Beige
 ];
 
+// ===== ELEGANT VASE SILHOUETTES =====
+const vaseGroup = new THREE.Group();
+const vaseCount = 15; // Fewer, more elegant
+
+for (let i = 0; i < vaseCount; i++) {
+    // Create elegant vase shape using lathe geometry
+    const points = [];
+    const segments = 12;
+
+    // Classic vase profile curve
+    for (let j = 0; j <= segments; j++) {
+        const t = j / segments;
+        let radius;
+
+        // Create different vase shapes
+        const vaseType = i % 3;
+        if (vaseType === 0) {
+            // Classic amphora shape
+            radius = 0.3 + Math.sin(t * Math.PI) * 0.25;
+        } else if (vaseType === 1) {
+            // Cylindrical pot
+            radius = 0.35 - t * 0.1;
+        } else {
+            // Modern tapered vase
+            radius = 0.2 + Math.sin(t * Math.PI * 0.5) * 0.2;
+        }
+
+        points.push(new THREE.Vector2(radius, t * 1.5 - 0.75));
+    }
+
+    const vaseGeometry = new THREE.LatheGeometry(points, 16);
+
+    const vaseMaterial = new THREE.MeshPhongMaterial({
+        color: earthToneColors[Math.floor(Math.random() * earthToneColors.length)],
+        transparent: true,
+        opacity: 0.08, // Very subtle
+        shininess: 30,
+        wireframe: false,
+        side: THREE.DoubleSide
+    });
+
+    const vase = new THREE.Mesh(vaseGeometry, vaseMaterial);
+
+    // Position - spread out more
+    vase.position.x = (Math.random() - 0.5) * 40;
+    vase.position.y = (Math.random() - 0.5) * 40;
+    vase.position.z = (Math.random() - 0.5) * 25;
+
+    // Scale - varied sizes
+    const scale = Math.random() * 0.6 + 0.4;
+    vase.scale.set(scale, scale, scale);
+
+    // Random rotation
+    vase.rotation.x = Math.random() * Math.PI;
+    vase.rotation.y = Math.random() * Math.PI;
+    vase.rotation.z = Math.random() * Math.PI;
+
+    // Velocity for gentle floating
+    vase.userData.velocity = {
+        x: (Math.random() - 0.5) * 0.002,
+        y: (Math.random() - 0.5) * 0.002,
+        z: (Math.random() - 0.5) * 0.001,
+        rotY: (Math.random() - 0.5) * 0.003
+    };
+
+    vaseGroup.add(vase);
+}
+
+scene.add(vaseGroup);
+
+// ===== BOTANICAL LEAF PARTICLES =====
+const leafGeometry = new THREE.BufferGeometry();
+const leafCount = 120;
+const positions = new Float32Array(leafCount * 3);
+const scales = new Float32Array(leafCount);
+const colors = new Float32Array(leafCount * 3);
+
 for (let i = 0; i < leafCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 30;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 30;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 15;
+    positions[i * 3] = (Math.random() - 0.5) * 35;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 35;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 18;
 
-    scales[i] = Math.random() * 0.8 + 0.5; // Larger particles
+    scales[i] = Math.random() * 1.2 + 0.4;
 
-    // Random earth tone color
-    const color = earthToneColors[Math.floor(Math.random() * earthToneColors.length)];
+    // Mostly green tones for leaves
+    const leafColors = [
+        new THREE.Color(0x7D9D72), // Sage
+        new THREE.Color(0xB8C5AE), // Light sage
+        new THREE.Color(0x6B8E63), // Deep sage
+    ];
+    const color = leafColors[Math.floor(Math.random() * leafColors.length)];
     colors[i * 3] = color.r;
     colors[i * 3 + 1] = color.g;
     colors[i * 3 + 2] = color.b;
@@ -82,11 +170,12 @@ const leafMaterial = new THREE.ShaderMaterial({
             vColor = color;
 
             vec3 pos = position;
-            pos.y += sin(time * 0.5 + position.x) * 0.5;
-            pos.x += cos(time * 0.3 + position.y) * 0.3;
+            // Gentle floating motion
+            pos.y += sin(time * 0.3 + position.x * 0.5) * 0.8;
+            pos.x += cos(time * 0.2 + position.y * 0.5) * 0.4;
 
             vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
-            gl_PointSize = scale * 50.0 * (300.0 / -mvPosition.z);
+            gl_PointSize = scale * 60.0 * (300.0 / -mvPosition.z);
             gl_Position = projectionMatrix * mvPosition;
         }
     `,
@@ -95,16 +184,16 @@ const leafMaterial = new THREE.ShaderMaterial({
         varying vec3 vColor;
 
         void main() {
-            vec2 center = gl_PointCoord - vec2(0.5);
-            float dist = length(center);
+            // Create leaf shape
+            vec2 coord = gl_PointCoord - vec2(0.5);
+            float dist = length(coord);
 
-            float leaf = smoothstep(0.5, 0.1, dist);
-            float edge = smoothstep(0.5, 0.4, dist);
+            // Leaf-like oval shape
+            float leaf = smoothstep(0.5, 0.2, dist);
+            leaf *= smoothstep(0.5, 0.3, abs(coord.x) * 1.5);
 
             vec3 color = vColor;
-            color = mix(color * 0.7, color, edge);
-
-            float alpha = leaf * 0.7;
+            float alpha = leaf * 0.6;
 
             gl_FragColor = vec4(color, alpha);
         }
@@ -117,34 +206,31 @@ const leafMaterial = new THREE.ShaderMaterial({
 const leafParticles = new THREE.Points(leafGeometry, leafMaterial);
 scene.add(leafParticles);
 
-// ===== AMBIENT GLOW PARTICLES =====
+// ===== SUBTLE LIGHT PARTICLES =====
 const glowGeometry = new THREE.BufferGeometry();
-const glowCount = 300; // Increased
+const glowCount = 80;
 const glowPositions = new Float32Array(glowCount * 3);
 const glowColors = new Float32Array(glowCount * 3);
-const glowSizes = new Float32Array(glowCount);
 
 for (let i = 0; i < glowCount; i++) {
-    glowPositions[i * 3] = (Math.random() - 0.5) * 35;
-    glowPositions[i * 3 + 1] = (Math.random() - 0.5) * 35;
-    glowPositions[i * 3 + 2] = (Math.random() - 0.5) * 20;
+    glowPositions[i * 3] = (Math.random() - 0.5) * 40;
+    glowPositions[i * 3 + 1] = (Math.random() - 0.5) * 40;
+    glowPositions[i * 3 + 2] = (Math.random() - 0.5) * 22;
 
+    // Warm light tones
     const color = earthToneColors[Math.floor(Math.random() * earthToneColors.length)];
     glowColors[i * 3] = color.r;
     glowColors[i * 3 + 1] = color.g;
     glowColors[i * 3 + 2] = color.b;
-
-    glowSizes[i] = Math.random() * 2 + 1;
 }
 
 glowGeometry.setAttribute('position', new THREE.BufferAttribute(glowPositions, 3));
 glowGeometry.setAttribute('color', new THREE.BufferAttribute(glowColors, 3));
-glowGeometry.setAttribute('size', new THREE.BufferAttribute(glowSizes, 1));
 
 const glowMaterial = new THREE.PointsMaterial({
-    size: 3,
+    size: 4,
     transparent: true,
-    opacity: 0.4,
+    opacity: 0.3,
     vertexColors: true,
     blending: THREE.AdditiveBlending,
     sizeAttenuation: true
@@ -181,12 +267,26 @@ function animate() {
     camera.position.y += (targetY * 2 - camera.position.y) * 0.05;
     camera.lookAt(scene.position);
 
-    // Rotate particle systems
-    leafParticles.rotation.y += 0.0008;
-    leafParticles.rotation.x = targetY * 0.3;
+    // Gentle vase floating animation
+    vaseGroup.children.forEach(vase => {
+        vase.position.x += vase.userData.velocity.x;
+        vase.position.y += vase.userData.velocity.y;
+        vase.position.z += vase.userData.velocity.z;
+        vase.rotation.y += vase.userData.velocity.rotY;
 
-    glowParticles.rotation.y -= 0.0005;
-    glowParticles.rotation.x += 0.0003;
+        // Gentle boundaries - wrap around smoothly
+        if (Math.abs(vase.position.x) > 20) vase.position.x *= -0.95;
+        if (Math.abs(vase.position.y) > 20) vase.position.y *= -0.95;
+        if (Math.abs(vase.position.z) > 12) vase.position.z *= -0.95;
+    });
+
+    // Rotate particle systems
+    vaseGroup.rotation.y += 0.0002;
+    leafParticles.rotation.y += 0.0005;
+    leafParticles.rotation.x = targetY * 0.2;
+
+    glowParticles.rotation.y -= 0.0003;
+    glowParticles.rotation.x += 0.0002;
 
     renderer.render(scene, camera);
 }
@@ -203,6 +303,7 @@ window.addEventListener('resize', () => {
 // Scroll-based animation
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
+    vaseGroup.rotation.z = scrolled * 0.0001;
     leafParticles.rotation.z = scrolled * 0.0002;
     glowParticles.rotation.z = -scrolled * 0.0001;
 });
