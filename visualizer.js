@@ -12,42 +12,42 @@ class AIVisualizer {
         this.productDatabase = [
             {
                 name: 'Kyoto Ceramic Planter',
-                image: './assets/images/product-1.jpg',
+                image: '/images/product-1.jpg',
                 price: '₹3,499',
                 style: 'modern minimalist',
                 color: 'neutral white beige'
             },
             {
                 name: 'Mediterranean Terracotta',
-                image: './assets/images/product-3.jpg',
+                image: '/images/product-3.jpg',
                 price: '₹1,899',
                 style: 'rustic traditional',
                 color: 'warm terracotta'
             },
             {
                 name: 'Scandi White Collection',
-                image: './assets/images/product-2.jpg',
+                image: '/images/product-2.jpg',
                 price: '₹2,799',
                 style: 'scandinavian modern',
                 color: 'pure white'
             },
             {
                 name: 'Jade Garden Vase',
-                image: './assets/images/product-5.jpg',
+                image: '/images/product-5.jpg',
                 price: '₹5,499',
                 style: 'artisan luxury',
                 color: 'sage green'
             },
             {
                 name: 'Architectural Series',
-                image: './assets/images/product-4.jpg',
+                image: '/images/product-4.jpg',
                 price: '₹4,999',
                 style: 'contemporary bold',
                 color: 'charcoal gray'
             },
             {
                 name: 'Hanging Garden Set',
-                image: './assets/images/product-6.jpg',
+                image: '/images/product-6.jpg',
                 price: '₹3,299',
                 style: 'bohemian eclectic',
                 color: 'mixed earth tones'
