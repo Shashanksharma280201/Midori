@@ -44,8 +44,8 @@ const palette = [
 const potsGroup = new THREE.Group();
 
 // ===== ELEGANT POT/VASE WIREFRAMES =====
-// Create 8-10 beautiful pot outlines
-const potCount = 10;
+// Create beautiful pot outlines - spread across the scene
+const potCount = 18; // Increased for richer background
 
 for (let i = 0; i < potCount; i++) {
     const points = [];
@@ -101,13 +101,13 @@ for (let i = 0; i < potCount; i++) {
 
     const pot = new THREE.Mesh(potGeometry, potMaterial);
 
-    // Position - spread naturally
-    pot.position.x = (Math.random() - 0.5) * 30;
-    pot.position.y = (Math.random() - 0.5) * 25;
-    pot.position.z = (Math.random() - 0.5) * 15;
+    // Position - spread naturally across wider area
+    pot.position.x = (Math.random() - 0.5) * 35;
+    pot.position.y = (Math.random() - 0.5) * 30;
+    pot.position.z = (Math.random() - 0.5) * 18;
 
-    // Random scale
-    const scale = Math.random() * 0.8 + 0.6;
+    // More varied scale for depth
+    const scale = Math.random() * 1.0 + 0.4;
     pot.scale.set(scale, scale, scale);
 
     // Random rotation
@@ -128,14 +128,14 @@ scene.add(potsGroup);
 
 // ===== SOFT PARTICLE ACCENTS =====
 const particleGeometry = new THREE.BufferGeometry();
-const particleCount = 80;
+const particleCount = 120; // Increased particles to complement more pots
 const positions = new Float32Array(particleCount * 3);
 const colors = new Float32Array(particleCount * 3);
 
 for (let i = 0; i < particleCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 28;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 28;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 12;
+    positions[i * 3] = (Math.random() - 0.5) * 32;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 32;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 15;
 
     const color = palette[Math.floor(Math.random() * palette.length)];
     colors[i * 3] = color.r;
