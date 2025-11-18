@@ -158,31 +158,54 @@ const particleMaterial = new THREE.PointsMaterial({
 const particles = new THREE.Points(particleGeometry, particleMaterial);
 scene.add(particles);
 
-// Mouse interaction
+// Enhanced mouse interaction with parallax
 let mouseX = 0;
 let mouseY = 0;
+let targetX = 0;
+let targetY = 0;
 
 document.addEventListener('mousemove', (event) => {
     mouseX = (event.clientX / window.innerWidth) * 2 - 1;
     mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
 });
 
-// Elegant smooth animation
+// Elegant smooth animation with cursor following
+let time = 0;
 function animate() {
     requestAnimationFrame(animate);
+    time += 0.005;
+
+    // Smooth easing for cursor movement
+    targetX += (mouseX - targetX) * 0.08;
+    targetY += (mouseY - targetY) * 0.08;
+
+    // Camera parallax - follows cursor smoothly
+    camera.position.x = targetX * 2;
+    camera.position.y = targetY * 1.5;
+    camera.lookAt(scene.position);
 
     // Rotate each pot individually for organic feel
-    potsGroup.children.forEach(pot => {
+    potsGroup.children.forEach((pot, index) => {
         pot.rotation.y += pot.userData.rotationSpeed.y;
         pot.rotation.x += pot.userData.rotationSpeed.x;
+
+        // Gentle wave motion
+        pot.position.y += Math.sin(time + index * 0.5) * 0.002;
     });
 
-    // Gentle group rotation with mouse interaction
-    potsGroup.rotation.y += 0.0002 + (mouseX * 0.0003);
-    potsGroup.rotation.x += (mouseY * 0.0002);
+    // Group responds to cursor with smooth delay
+    potsGroup.rotation.y += 0.0002 + (targetX * 0.0008);
+    potsGroup.rotation.x += (targetY * 0.0005);
 
-    // Subtle particle rotation
-    particles.rotation.y += 0.0004;
+    // Floating motion
+    potsGroup.position.y = Math.sin(time * 0.4) * 0.3;
+    potsGroup.position.x = Math.cos(time * 0.3) * 0.2;
+
+    // Particles follow cursor inversely (parallax effect)
+    particles.position.x = -targetX * 0.8;
+    particles.position.y = -targetY * 0.6;
+    particles.rotation.y += 0.0004 + (targetX * 0.0002);
+    particles.rotation.x += (targetY * 0.0002);
 
     renderer.render(scene, camera);
 }
