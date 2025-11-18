@@ -34,28 +34,108 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 camera.position.z = 5;
 
-// ===== MINIMAL AESTHETIC PARTICLES =====
-const particleGeometry = new THREE.BufferGeometry();
-const particleCount = 150;
-const positions = new Float32Array(particleCount * 3);
-const sizes = new Float32Array(particleCount);
-const colors = new Float32Array(particleCount * 3);
-
 // Elegant color palette
 const palette = [
-    new THREE.Color(0xE8DED0), // Soft beige
     new THREE.Color(0xD4C5B9), // Warm cream
     new THREE.Color(0xB8C5AE), // Pale sage
-    new THREE.Color(0xC9D1C8), // Soft mint
+    new THREE.Color(0xC9B8A8), // Soft taupe
 ];
 
-for (let i = 0; i < particleCount; i++) {
-    // Spread across screen
-    positions[i * 3] = (Math.random() - 0.5) * 25;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 25;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+const potsGroup = new THREE.Group();
 
-    sizes[i] = Math.random() * 3 + 1;
+// ===== ELEGANT POT/VASE WIREFRAMES =====
+// Create 8-10 beautiful pot outlines
+const potCount = 10;
+
+for (let i = 0; i < potCount; i++) {
+    const points = [];
+
+    // Different pot/vase styles
+    const style = i % 4;
+
+    if (style === 0) {
+        // Classic rounded pot
+        for (let j = 0; j <= 20; j++) {
+            const t = j / 20;
+            const radius = 0.25 + Math.sin(t * Math.PI) * 0.15;
+            points.push(new THREE.Vector2(radius, t * 1.2 - 0.6));
+        }
+    } else if (style === 1) {
+        // Tall slender vase
+        for (let j = 0; j <= 20; j++) {
+            const t = j / 20;
+            let radius;
+            if (t < 0.3) {
+                radius = 0.15 + t * 0.2;
+            } else {
+                radius = 0.2 - (t - 0.3) * 0.1;
+            }
+            points.push(new THREE.Vector2(radius, t * 1.5 - 0.75));
+        }
+    } else if (style === 2) {
+        // Wide bowl planter
+        for (let j = 0; j <= 20; j++) {
+            const t = j / 20;
+            const radius = 0.35 - t * 0.15;
+            points.push(new THREE.Vector2(radius, t * 0.8 - 0.4));
+        }
+    } else {
+        // Modern tapered pot
+        for (let j = 0; j <= 20; j++) {
+            const t = j / 20;
+            const radius = 0.3 - t * 0.08 + Math.sin(t * Math.PI * 2) * 0.03;
+            points.push(new THREE.Vector2(radius, t * 1.0 - 0.5));
+        }
+    }
+
+    const potGeometry = new THREE.LatheGeometry(points, 24);
+
+    // Wireframe material - just elegant outlines
+    const potMaterial = new THREE.MeshBasicMaterial({
+        color: palette[Math.floor(Math.random() * palette.length)],
+        wireframe: true,
+        transparent: true,
+        opacity: 0.15,
+        side: THREE.DoubleSide
+    });
+
+    const pot = new THREE.Mesh(potGeometry, potMaterial);
+
+    // Position - spread naturally
+    pot.position.x = (Math.random() - 0.5) * 30;
+    pot.position.y = (Math.random() - 0.5) * 25;
+    pot.position.z = (Math.random() - 0.5) * 15;
+
+    // Random scale
+    const scale = Math.random() * 0.8 + 0.6;
+    pot.scale.set(scale, scale, scale);
+
+    // Random rotation
+    pot.rotation.x = Math.random() * Math.PI * 0.3;
+    pot.rotation.y = Math.random() * Math.PI;
+    pot.rotation.z = Math.random() * Math.PI * 0.2;
+
+    // Gentle rotation velocity
+    pot.userData.rotationSpeed = {
+        y: (Math.random() - 0.5) * 0.002,
+        x: (Math.random() - 0.5) * 0.001
+    };
+
+    potsGroup.add(pot);
+}
+
+scene.add(potsGroup);
+
+// ===== SOFT PARTICLE ACCENTS =====
+const particleGeometry = new THREE.BufferGeometry();
+const particleCount = 80;
+const positions = new Float32Array(particleCount * 3);
+const colors = new Float32Array(particleCount * 3);
+
+for (let i = 0; i < particleCount; i++) {
+    positions[i * 3] = (Math.random() - 0.5) * 28;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 28;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 12;
 
     const color = palette[Math.floor(Math.random() * palette.length)];
     colors[i * 3] = color.r;
@@ -64,15 +144,14 @@ for (let i = 0; i < particleCount; i++) {
 }
 
 particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-particleGeometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
 particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
 const particleMaterial = new THREE.PointsMaterial({
-    size: 3,
+    size: 2.5,
     transparent: true,
-    opacity: 0.4,
+    opacity: 0.25,
     vertexColors: true,
-    blending: THREE.NormalBlending,
+    blending: THREE.AdditiveBlending,
     sizeAttenuation: true
 });
 
@@ -88,16 +167,22 @@ document.addEventListener('mousemove', (event) => {
     mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
 });
 
-// Simple smooth animation
+// Elegant smooth animation
 function animate() {
     requestAnimationFrame(animate);
 
-    // Gentle rotation on mouse move
-    particles.rotation.y += (mouseX * 0.0005);
-    particles.rotation.x += (mouseY * 0.0003);
+    // Rotate each pot individually for organic feel
+    potsGroup.children.forEach(pot => {
+        pot.rotation.y += pot.userData.rotationSpeed.y;
+        pot.rotation.x += pot.userData.rotationSpeed.x;
+    });
 
-    // Slow constant rotation
-    particles.rotation.y += 0.0003;
+    // Gentle group rotation with mouse interaction
+    potsGroup.rotation.y += 0.0002 + (mouseX * 0.0003);
+    potsGroup.rotation.x += (mouseY * 0.0002);
+
+    // Subtle particle rotation
+    particles.rotation.y += 0.0004;
 
     renderer.render(scene, camera);
 }
@@ -114,6 +199,7 @@ window.addEventListener('resize', () => {
 // Scroll-based animation
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
+    potsGroup.rotation.z = scrolled * 0.00008;
     particles.rotation.z = scrolled * 0.0001;
 });
 
