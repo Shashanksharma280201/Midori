@@ -58,46 +58,68 @@ class AIVisualizer {
     }
 
     init() {
-        if (!this.canvas) return;
+        if (!this.canvas) {
+            console.error('Visualizer canvas not found');
+            return;
+        }
 
         // Upload button
         const uploadBtn = document.getElementById('uploadBtn');
         const fileInput = document.getElementById('fileInput');
         const uploadArea = document.getElementById('uploadArea');
 
-        if (uploadBtn && fileInput) {
-            uploadBtn.addEventListener('click', () => fileInput.click());
-            fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
+        if (!uploadBtn || !fileInput || !uploadArea) {
+            console.error('Upload elements not found:', { uploadBtn, fileInput, uploadArea });
+            return;
         }
+
+        // Button click handler
+        uploadBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            fileInput.click();
+        });
+
+        // File input change handler
+        fileInput.addEventListener('change', (e) => this.handleFileSelect(e));
 
         // Make upload area clickable
-        if (uploadArea) {
-            uploadArea.addEventListener('click', (e) => {
-                // Don't trigger if clicking the button itself
-                if (e.target !== uploadBtn && !uploadBtn.contains(e.target)) {
-                    fileInput.click();
-                }
-            });
+        uploadArea.addEventListener('click', (e) => {
+            // Don't trigger if clicking the button itself
+            if (e.target === uploadBtn || uploadBtn.contains(e.target)) {
+                return;
+            }
+            fileInput.click();
+        });
 
-            // Drag and drop for upload area
-            uploadArea.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                uploadArea.classList.add('dragover');
-            });
+        // Drag and drop for upload area
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.classList.add('dragover');
+        });
 
-            uploadArea.addEventListener('dragleave', () => {
-                uploadArea.classList.remove('dragover');
-            });
+        uploadArea.addEventListener('dragleave', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.classList.remove('dragover');
+        });
 
-            uploadArea.addEventListener('drop', (e) => {
-                e.preventDefault();
-                uploadArea.classList.remove('dragover');
-                const file = e.dataTransfer.files[0];
-                if (file && file.type.startsWith('image/')) {
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadArea.classList.remove('dragover');
+
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                const file = files[0];
+                if (file.type.startsWith('image/')) {
                     this.loadImage(file);
+                } else {
+                    console.error('Please upload an image file');
+                    alert('Please upload an image file (JPG, PNG, etc.)');
                 }
-            });
-        }
+            }
+        });
 
         // Control buttons
         const resetBtn = document.getElementById('resetBtn');
@@ -120,24 +142,50 @@ class AIVisualizer {
 
     handleFileSelect(event) {
         const file = event.target.files[0];
-        if (file && file.type.startsWith('image/')) {
+        if (!file) {
+            console.log('No file selected');
+            return;
+        }
+
+        if (file.type.startsWith('image/')) {
+            console.log('Loading image:', file.name);
             this.loadImage(file);
+        } else {
+            console.error('Invalid file type:', file.type);
+            alert('Please select an image file (JPG, PNG, etc.)');
         }
     }
 
     loadImage(file) {
+        console.log('Starting image load...');
         const reader = new FileReader();
+
+        reader.onerror = (error) => {
+            console.error('FileReader error:', error);
+            alert('Error reading file. Please try again.');
+        };
+
         reader.onload = (e) => {
+            console.log('File loaded, creating image...');
             const img = new Image();
+
+            img.onerror = (error) => {
+                console.error('Image load error:', error);
+                alert('Error loading image. Please try a different image.');
+            };
+
             img.onload = () => {
+                console.log('Image loaded successfully:', img.width, 'x', img.height);
                 this.uploadedImage = img;
                 this.setupCanvas();
                 this.drawImage();
                 this.showInterface();
                 this.generateRecommendations();
             };
+
             img.src = e.target.result;
         };
+
         reader.readAsDataURL(file);
     }
 
