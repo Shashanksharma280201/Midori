@@ -142,13 +142,11 @@ const leafMaterial = new THREE.ShaderMaterial({
     vertexShader: `
         attribute float scale;
         attribute vec3 color;
-        varying vec2 vUv;
         varying float vScale;
         varying vec3 vColor;
         uniform float time;
 
         void main() {
-            vUv = uv;
             vScale = scale;
             vColor = color;
 
@@ -157,7 +155,7 @@ const leafMaterial = new THREE.ShaderMaterial({
             pos.x += cos(time * 0.3 + position.y) * 0.3;
 
             vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
-            gl_PointSize = scale * 50.0 * (300.0 / -mvPosition.z); // Larger size
+            gl_PointSize = scale * 50.0 * (300.0 / -mvPosition.z);
             gl_Position = projectionMatrix * mvPosition;
         }
     `,
@@ -169,14 +167,13 @@ const leafMaterial = new THREE.ShaderMaterial({
             vec2 center = gl_PointCoord - vec2(0.5);
             float dist = length(center);
 
-            // Leaf/petal shape
             float leaf = smoothstep(0.5, 0.1, dist);
             float edge = smoothstep(0.5, 0.4, dist);
 
             vec3 color = vColor;
             color = mix(color * 0.7, color, edge);
 
-            float alpha = leaf * 0.7; // More visible
+            float alpha = leaf * 0.7;
 
             gl_FragColor = vec4(color, alpha);
         }
