@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './visualizer.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,76 +34,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 camera.position.z = 8;
 
-// Enhanced lighting for visibility
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-scene.add(ambientLight);
-
-const pointLight1 = new THREE.PointLight(0xC17459, 2); // Terracotta
-pointLight1.position.set(5, 5, 5);
-scene.add(pointLight1);
-
-const pointLight2 = new THREE.PointLight(0x8B7355, 1.5); // Taupe
-pointLight2.position.set(-5, -5, 5);
-scene.add(pointLight2);
-
-const pointLight3 = new THREE.PointLight(0x7D9D72, 1); // Sage green
-pointLight3.position.set(0, -5, -5);
-scene.add(pointLight3);
-
-// ===== POTTERY VASE PARTICLES =====
-const vaseCount = 50;
-const vaseGroup = new THREE.Group();
-
-for (let i = 0; i < vaseCount; i++) {
-    // Create simple vase shape using lathe geometry
-    const points = [];
-    for (let j = 0; j < 10; j++) {
-        const t = j / 9;
-        const radius = 0.3 + Math.sin(t * Math.PI) * 0.2;
-        points.push(new THREE.Vector2(radius, t * 2 - 1));
-    }
-
-    const vaseGeometry = new THREE.LatheGeometry(points, 12);
-
-    const vaseMaterial = new THREE.MeshPhongMaterial({
-        color: [0xC17459, 0x8B7355, 0x7D9D72, 0xE8DED0][Math.floor(Math.random() * 4)],
-        transparent: true,
-        opacity: 0.15,
-        shininess: 80,
-        specular: 0xffffff
-    });
-
-    const vase = new THREE.Mesh(vaseGeometry, vaseMaterial);
-
-    // Random position
-    vase.position.x = (Math.random() - 0.5) * 30;
-    vase.position.y = (Math.random() - 0.5) * 30;
-    vase.position.z = (Math.random() - 0.5) * 20;
-
-    // Random scale
-    const scale = Math.random() * 0.3 + 0.2;
-    vase.scale.set(scale, scale, scale);
-
-    // Random rotation
-    vase.rotation.x = Math.random() * Math.PI;
-    vase.rotation.y = Math.random() * Math.PI;
-    vase.rotation.z = Math.random() * Math.PI;
-
-    // Store velocity for animation
-    vase.userData.velocity = {
-        x: (Math.random() - 0.5) * 0.005,
-        y: (Math.random() - 0.5) * 0.005,
-        z: (Math.random() - 0.5) * 0.003,
-        rotX: (Math.random() - 0.5) * 0.01,
-        rotY: (Math.random() - 0.5) * 0.01
-    };
-
-    vaseGroup.add(vase);
-}
-
-scene.add(vaseGroup);
-
-// ===== LEAF PARTICLES (Enhanced) =====
+// ===== SIMPLE ELEGANT PARTICLES =====
 const leafGeometry = new THREE.BufferGeometry();
 const leafCount = 200; // Increased from 100
 const positions = new Float32Array(leafCount * 3);
@@ -221,48 +153,6 @@ const glowMaterial = new THREE.PointsMaterial({
 const glowParticles = new THREE.Points(glowGeometry, glowMaterial);
 scene.add(glowParticles);
 
-// ===== GEOMETRIC SHAPES (Pottery inspired) =====
-const geometryGroup = new THREE.Group();
-const shapeCount = 30;
-
-for (let i = 0; i < shapeCount; i++) {
-    let geometry;
-    const rand = Math.random();
-
-    if (rand < 0.3) {
-        geometry = new THREE.TorusGeometry(0.5, 0.2, 8, 16);
-    } else if (rand < 0.6) {
-        geometry = new THREE.CylinderGeometry(0.3, 0.5, 1, 8);
-    } else {
-        geometry = new THREE.SphereGeometry(0.4, 8, 8);
-    }
-
-    const material = new THREE.MeshPhongMaterial({
-        color: earthToneColors[Math.floor(Math.random() * earthToneColors.length)],
-        transparent: true,
-        opacity: 0.1,
-        wireframe: true
-    });
-
-    const shape = new THREE.Mesh(geometry, material);
-
-    shape.position.x = (Math.random() - 0.5) * 30;
-    shape.position.y = (Math.random() - 0.5) * 30;
-    shape.position.z = (Math.random() - 0.5) * 20;
-
-    const scale = Math.random() * 0.5 + 0.3;
-    shape.scale.set(scale, scale, scale);
-
-    shape.userData.velocity = {
-        rotX: (Math.random() - 0.5) * 0.005,
-        rotY: (Math.random() - 0.5) * 0.005
-    };
-
-    geometryGroup.add(shape);
-}
-
-scene.add(geometryGroup);
-
 // Mouse interaction
 let mouseX = 0;
 let mouseY = 0;
@@ -298,38 +188,6 @@ function animate() {
     glowParticles.rotation.y -= 0.0005;
     glowParticles.rotation.x += 0.0003;
 
-    vaseGroup.rotation.y += 0.0003;
-    vaseGroup.rotation.x = Math.sin(time * 0.1) * 0.1;
-
-    geometryGroup.rotation.y -= 0.0004;
-    geometryGroup.rotation.z = Math.cos(time * 0.1) * 0.1;
-
-    // Animate individual vases
-    vaseGroup.children.forEach(vase => {
-        vase.position.x += vase.userData.velocity.x;
-        vase.position.y += vase.userData.velocity.y;
-        vase.position.z += vase.userData.velocity.z;
-
-        vase.rotation.x += vase.userData.velocity.rotX;
-        vase.rotation.y += vase.userData.velocity.rotY;
-
-        // Wrap around
-        if (Math.abs(vase.position.x) > 15) vase.position.x *= -0.9;
-        if (Math.abs(vase.position.y) > 15) vase.position.y *= -0.9;
-        if (Math.abs(vase.position.z) > 10) vase.position.z *= -0.9;
-    });
-
-    // Animate geometric shapes
-    geometryGroup.children.forEach(shape => {
-        shape.rotation.x += shape.userData.velocity.rotX;
-        shape.rotation.y += shape.userData.velocity.rotY;
-    });
-
-    // Pulse lights
-    pointLight1.intensity = 1.8 + Math.sin(time * 0.5) * 0.3;
-    pointLight2.intensity = 1.3 + Math.cos(time * 0.3) * 0.2;
-    pointLight3.intensity = 0.9 + Math.sin(time * 0.7) * 0.2;
-
     renderer.render(scene, camera);
 }
 
@@ -345,10 +203,8 @@ window.addEventListener('resize', () => {
 // Scroll-based animation
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
-    vaseGroup.rotation.z = scrolled * 0.0003;
     leafParticles.rotation.z = scrolled * 0.0002;
     glowParticles.rotation.z = -scrolled * 0.0001;
-    geometryGroup.rotation.x = scrolled * 0.0001;
 });
 
 // ===== GSAP SCROLL ANIMATIONS =====
