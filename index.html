@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Midori Gardens - Artisan Planters & Vessels</title>
-    <meta name="description" content="Curated collection of premium ceramic planters, handcrafted pots, and designer vessels for discerning spaces.">
+    <title>Midori Flowers - Premium Floral Design & Curation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -19,904 +17,815 @@
 
     <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <img src="assets/images/Midori-Logo.png" alt="Midori Gardens Logo">
-            </a>
-            <div class="nav-center">
-                <a href="#collections" class="nav-link">Collections</a>
-                <a href="#materials" class="nav-link">Craftsmanship</a>
-                <a href="#styling" class="nav-link">Styling Guide</a>
-                <a href="#about" class="nav-link">Our Story</a>
-            </div>
-            <div class="nav-actions">
-                <button class="nav-icon-btn">
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
-                        <circle cx="11" cy="11" r="8"/>
-                        <path d="m21 21-4.35-4.35"/>
-                    </svg>
-                </button>
-                <button class="nav-icon-btn cart-btn">
-                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
-                        <circle cx="9" cy="21" r="1"/>
-                        <circle cx="20" cy="21" r="1"/>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                    </svg>
-                    <span class="cart-count">0</span>
-                </button>
-                <button class="nav-icon-btn mobile-menu-btn" id="mobileMenuBtn">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                        <line x1="3" y1="12" x2="21" y2="12"/>
-                        <line x1="3" y1="6" x2="21" y2="6"/>
-                        <line x1="3" y1="18" x2="21" y2="18"/>
-                    </svg>
-                </button>
-            </div>
+        <div class="nav-logo">MIDORI</div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#visualizer" class="nav-link">Placement Guide</a>
+            <a href="#process" class="nav-link">Our Process</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-header">
-                <div class="nav-logo">
-                    <img src="assets/images/Midori-Logo.png" alt="Midori Gardens Logo">
-                </div>
-                <button class="mobile-menu-close" id="mobileMenuClose">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
-                        <line x1="18" y1="6" x2="6" y2="18"/>
-                        <line x1="6" y1="6" x2="18" y2="18"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="mobile-menu-links">
-                <a href="#collections" class="mobile-nav-link">Collections</a>
-                <a href="#materials" class="mobile-nav-link">Craftsmanship</a>
-                <a href="#styling" class="mobile-nav-link">Styling Guide</a>
-                <a href="#about" class="mobile-nav-link">Our Story</a>
-                <a href="#visualizer" class="mobile-nav-link mobile-nav-cta">Try AI Visualizer</a>
-            </div>
-        </div>
-        </div>
+        <button class="nav-cta">Book Consultation</button>
     </nav>
 
-    <!-- Hero Section with Product Showcase -->
-    <section class="hero-luxury">
-        <div class="hero-content-wrapper">
-            <div class="hero-text-side">
-                <p class="hero-eyebrow">AI-Powered Smart Placement </p>
-                <h1 class="hero-title">See Your Vase<br/>Before It Arrives</h1>
-                <p class="hero-subtitle">
-                    Our revolutionary AI technology analyzes your space's lighting, colors, and style in seconds.
-                    Upload any photo and instantly get personalized vase recommendations with interactive placement preview.
-                    <strong>No guesswork. No returns. Just perfect matches for your home.</strong>
-                </p>
-                <div class="hero-cta-group">
-                    <!-- <a href="#visualizer" class="btn btn-primary-dark">Try AI Visualizer</a> -->
-                    <a href="#collections" class="btn-text-link">
-                        Browse Collection
-                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                            <polyline points="12 5 19 12 12 19"/>
-                        </svg>
-                    </a>
+    <!-- Hero Section -->
+    <section id="home" class="section hero">
+        <div class="hero-content">
+            <div class="hero-logo">MIDORI</div>
+            <div class="hero-subtitle">Premium Floral Curation</div>
+            <p class="hero-description">
+                We source premium flowers directly from award-winning growers and transform them into bespoke arrangements.
+                From the first consultation to professional in-home placement, we deliver a complete luxury experience.
+                <strong>Over 500 satisfied clients trust us with their most important spaces.</strong>
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Happy Clients</div>
                 </div>
-                <div class="hero-stats-minimal">
-                    <div class="stat-mini">
-                        <span class="stat-number-mini">50+</span>
-                        <span class="stat-label-mini">AI Parameters</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-mini">
-                        <span class="stat-number-mini">96%</span>
-                        <span class="stat-label-mini">Match Accuracy</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-mini">
-                        <span class="stat-number-mini">87%</span>
-                        <span class="stat-label-mini">Fewer Returns</span>
-                    </div>
+                <div class="stat">
+                    <div class="stat-number">2,000+</div>
+                    <div class="stat-label">Arrangements</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Years Experience</div>
                 </div>
             </div>
-            <div class="hero-visual-side">
-                <div class="hero-product-showcase">
-                    <!-- Main featured product -->
-                    <div class="featured-product-image">
-                        <img src="./assets/images/hero-main.jpg"
-                             alt="Premium Ceramic Planter"
-                             class="product-hero-img">
-                        <div class="product-badge">Handcrafted</div>
-                    </div>
-                    <!-- Floating accent products -->
-                    <div class="accent-product accent-1">
-                        <img src="./assets/images/product-2.jpg" alt="Artisan Planter">
-                    </div>
-                    <div class="accent-product accent-2">
-                        <img src="./assets/images/product-3.jpg" alt="Designer Vase">
-                    </div>
-                </div>
+            <div class="hero-cta-group">
+                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Book Free Consultation</button>
+                <button class="btn btn-secondary" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">View Our Work</button>
             </div>
         </div>
-        <div class="scroll-indicator-luxury">
-            <span class="scroll-text">Scroll to explore</span>
-            <div class="scroll-line-luxury"></div>
+        <div class="scroll-indicator">
+            <span>Scroll to discover</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- AI Visualizer Section -->
-    <section id="visualizer" class="section ai-visualizer-section">
-        <div class="visualizer-header">
-            <p class="section-eyebrow">Powered by Advanced Computer Vision</p>
-            <h2 class="section-title-luxury">Try Our AI Visualizer</h2>
-            <p class="section-description-luxury">
-                Our proprietary AI analyzes over 50 design elements in your space - from natural light patterns and color temperatures
-                to existing decor styles and spatial dimensions. Get instant, intelligent recommendations with confidence scores showing
-                exactly why each vase works in your space. Then visualize them in real-time with our interactive placement tool.
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="section-header">
+            <div class="section-subtitle">What We Offer</div>
+            <h2 class="section-title">Premium Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </div>
+                <h3 class="service-title">Bulk Flower Sourcing</h3>
+                <p class="service-description">
+                    Access to premium, fresh flowers sourced directly from the finest growers.
+                    We select only the highest quality blooms for our discerning clients.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </div>
+                <h3 class="service-title">Curated Arrangements</h3>
+                <p class="service-description">
+                    Bespoke floral designs tailored to your aesthetic, space, and occasion.
+                    Each arrangement is a unique work of art.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
+                    </svg>
+                </div>
+                <h3 class="service-title">Professional Placement</h3>
+                <p class="service-description">
+                    Expert styling and placement in your home or venue. We ensure every arrangement
+                    complements its environment perfectly.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                    </svg>
+                </div>
+                <h3 class="service-title">Vases & Vessels</h3>
+                <p class="service-description">
+                    Carefully selected vases, pots, and vessels that enhance the beauty of each arrangement.
+                    Form meets function in every piece.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Placement Visualizer Section -->
+    <section id="visualizer" class="section visualizer">
+        <div class="section-header">
+            <div class="section-subtitle">Interactive Experience</div>
+            <h2 class="section-title">Visualize Perfect Placement</h2>
+            <p class="section-description">
+                Explore how our expert florists position arrangements in different spaces.
+                Click on any scenario to see the placement principles in action.
             </p>
         </div>
 
+        <!-- Flower & Vase Customization -->
+        <div class="customization-panel">
+            <div class="customization-section">
+                <h3>Choose Your Flowers</h3>
+                <div class="flower-selector">
+                    <button class="flower-btn active" data-flower="rose">
+                        <div class="flower-preview" style="background: linear-gradient(135deg, #ff69b4, #ffc0cb);"></div>
+                        <span>Rose</span>
+                    </button>
+                    <button class="flower-btn" data-flower="peony">
+                        <div class="flower-preview" style="background: linear-gradient(135deg, #ffe4e1, #fff0f5);"></div>
+                        <span>Peony</span>
+                    </button>
+                    <button class="flower-btn" data-flower="orchid">
+                        <div class="flower-preview" style="background: linear-gradient(135deg, #dda0dd, #ee82ee);"></div>
+                        <span>Orchid</span>
+                    </button>
+                    <button class="flower-btn" data-flower="lily">
+                        <div class="flower-preview" style="background: linear-gradient(135deg, #fff0f5, #ffe4e1);"></div>
+                        <span>Lily</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="customization-section">
+                <h3>Choose Your Vase</h3>
+                <div class="vase-selector">
+                    <button class="vase-btn active" data-vase="ceramic">
+                        <div class="vase-preview" style="background: linear-gradient(135deg, #e8dcc8, #d4c5b0);"></div>
+                        <span>Ceramic</span>
+                    </button>
+                    <button class="vase-btn" data-vase="modern">
+                        <div class="vase-preview" style="background: linear-gradient(135deg, #4a4a4a, #2c2c2c);"></div>
+                        <span>Modern</span>
+                    </button>
+                    <button class="vase-btn" data-vase="crystal">
+                        <div class="vase-preview" style="background: linear-gradient(135deg, #f5f0e8, #ffffff);"></div>
+                        <span>Crystal</span>
+                    </button>
+                    <button class="vase-btn" data-vase="rustic">
+                        <div class="vase-preview" style="background: linear-gradient(135deg, #d4a574, #a89080);"></div>
+                        <span>Rustic</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Selector -->
+        <div class="room-selector">
+            <button class="room-btn active" data-room="living">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                    <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+                <span>Living Room</span>
+            </button>
+            <button class="room-btn" data-room="office">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                <span>Office</span>
+            </button>
+            <button class="room-btn" data-room="dining">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="8" y1="6" x2="21" y2="6"/>
+                    <line x1="8" y1="12" x2="21" y2="12"/>
+                    <line x1="8" y1="18" x2="21" y2="18"/>
+                    <line x1="3" y1="6" x2="3.01" y2="6"/>
+                    <line x1="3" y1="12" x2="3.01" y2="12"/>
+                    <line x1="3" y1="18" x2="3.01" y2="18"/>
+                </svg>
+                <span>Dining Room</span>
+            </button>
+            <button class="room-btn" data-room="entrance">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <line x1="9" y1="3" x2="9" y2="21"/>
+                </svg>
+                <span>Entrance</span>
+            </button>
+        </div>
+
+        <!-- 3D Visualizer Canvas -->
         <div class="visualizer-container">
-            <!-- Left: Upload and Canvas Area -->
-            <div class="visualizer-workspace">
-                <div class="upload-area" id="uploadArea">
-                    <div class="upload-prompt">
-                        <svg viewBox="0 0 24 24" width="64" height="64" stroke="currentColor" stroke-width="1.5" fill="none" class="upload-icon">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="17 8 12 3 7 8"/>
-                            <line x1="12" y1="3" x2="12" y2="15"/>
-                        </svg>
-                        <h3>Upload Your Space</h3>
-                        <p>Click or drag an image of your room</p>
-                        <input type="file" id="fileInput" accept="image/*" hidden>
-                        <button class="btn btn-primary-dark" id="uploadBtn">Choose File</button>
-                    </div>
+            <canvas id="placement-canvas"></canvas>
+
+            <!-- Control Hints -->
+            <div class="visualizer-controls">
+                <div class="control-hint">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                    </svg>
+                    <span>Drag to rotate in 3D</span>
                 </div>
-
-                <!-- Canvas for visualization -->
-                <canvas id="visualizerCanvas" class="visualizer-canvas" style="display:none;"></canvas>
-
-                <!-- Control Panel -->
-                <div class="visualizer-controls" id="controls" style="display:none;">
-                    <button class="control-btn" id="resetBtn">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
-                            <polyline points="1 4 1 10 7 10"/>
-                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
-                        </svg>
-                        Reset
-                    </button>
-                    <button class="control-btn" id="downloadBtn">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
-                        Download
-                    </button>
-                    <button class="control-btn" id="newImageBtn">
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
-                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <polyline points="21 15 16 10 5 21"/>
-                        </svg>
-                        New Image
-                    </button>
-                </div>
-            </div>
-
-            <!-- Right: AI Recommendations Panel -->
-            <div class="ai-recommendations-panel" id="recommendationsPanel" style="display:none;">
-                <div class="panel-header">
-                    <h3>AI Recommendations</h3>
-                    <div class="ai-badge">
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                        AI Analyzed
-                    </div>
-                </div>
-                <p class="panel-description">Based on your space's lighting, colors, and style:</p>
-
-                <div class="recommendations-list" id="recommendationsList">
-                    <!-- Recommendation cards will be dynamically inserted here -->
-                </div>
-
-                <div class="panel-help">
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                <div class="control-hint">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 16v-4"/>
-                        <path d="M12 8h.01"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
                     </svg>
-                    <span>Drag vases from recommendations onto your image</span>
+                    <span>Scroll to zoom</span>
                 </div>
-            </div>
-        </div>
-
-        <!-- How It Works -->
-        <div class="how-it-works">
-            <h3>How It Works</h3>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-number">1</div>
-                    <h4>Upload Image</h4>
-                    <p>Take a photo of your space where you want to place a vase</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <h4>Smart AI Analysis</h4>
-                    <p>Our neural network evaluates 50+ design parameters including ambient lighting, color harmony, spatial balance, and interior style to generate personalized recommendations with 94-96% accuracy</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <h4>Interactive Preview</h4>
-                    <p>Drag AI-recommended vases directly onto your photo to see realistic placement. Adjust positioning, try multiple options, and visualize before purchase</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <h4>Buy with Confidence</h4>
-                    <p>Download your visualization, share with family, or purchase directly. Our AI ensures you'll love your choice - reducing returns by 87% compared to traditional shopping</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Technology Features -->
-    <section class="section ai-features-section">
-        <div class="ai-features-container">
-            <div class="ai-features-header">
-                <p class="section-eyebrow">Advanced Technology</p>
-                <h2 class="section-title-luxury">Why Our AI Works</h2>
-                <p class="section-description-luxury">
-                    Trained on over 100,000 interior design combinations and validated by professional interior designers,
-                    our AI delivers recommendations you can trust.
-                </p>
-            </div>
-
-            <div class="ai-features-grid">
-                <div class="ai-feature-card">
-                    <div class="ai-feature-icon">
-                        <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3>Deep Learning Vision</h3>
-                    <p>Our computer vision model recognizes furniture, wall colors, natural lighting, and architectural elements with 98% accuracy</p>
-                    <div class="ai-feature-stats">
-                        <span class="feature-stat">98% accuracy</span>
-                        <span class="feature-stat">50+ elements analyzed</span>
-                    </div>
-                </div>
-
-                <div class="ai-feature-card">
-                    <div class="ai-feature-icon">
-                        <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
-                        </svg>
-                    </div>
-                    <h3>Color Harmony Analysis</h3>
-                    <p>Automatically detects your room's color palette and suggests vases that complement or contrast beautifully based on color theory</p>
-                    <div class="ai-feature-stats">
-                        <span class="feature-stat">16M colors detected</span>
-                        <span class="feature-stat">Real-time analysis</span>
-                    </div>
-                </div>
-
-                <div class="ai-feature-card">
-                    <div class="ai-feature-icon">
-                        <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-                            <rect x="3" y="3" width="7" height="7"/>
-                            <rect x="14" y="3" width="7" height="7"/>
-                            <rect x="14" y="14" width="7" height="7"/>
-                            <rect x="3" y="14" width="7" height="7"/>
-                        </svg>
-                    </div>
-                    <h3>Style Recognition</h3>
-                    <p>Identifies your interior design style (Modern, Bohemian, Scandinavian, etc.) and recommends vases that match your aesthetic</p>
-                    <div class="ai-feature-stats">
-                        <span class="feature-stat">25+ style categories</span>
-                        <span class="feature-stat">Designer-validated</span>
-                    </div>
-                </div>
-
-                <div class="ai-feature-card">
-                    <div class="ai-feature-icon">
-                        <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <h3>Confidence Scoring</h3>
-                    <p>Each recommendation comes with an AI confidence score and detailed reasoning so you understand exactly why it's a great match</p>
-                    <div class="ai-feature-stats">
-                        <span class="feature-stat">94-96% matches</span>
-                        <span class="feature-stat">Transparent AI</span>
-                    </div>
-                </div>
-
-                <div class="ai-feature-card">
-                    <div class="ai-feature-icon">
-                        <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
-                    </div>
-                    <h3>Spatial Awareness</h3>
-                    <p>Understands room dimensions and suggests appropriately sized vases that won't overwhelm or underwhelm your space</p>
-                    <div class="ai-feature-stats">
-                        <span class="feature-stat">3D spatial mapping</span>
-                        <span class="feature-stat">Size optimization</span>
-                    </div>
-                </div>
-
-                <div class="ai-feature-card">
-                    <div class="ai-feature-icon">
-                        <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="1.5" fill="none">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                    </div>
-                    <h3>Instant Results</h3>
-                    <p>Get personalized recommendations in under 2 seconds. Our optimized AI runs entirely in the cloud for lightning-fast analysis</p>
-                    <div class="ai-feature-stats">
-                        <span class="feature-stat">&lt;2s processing</span>
-                        <span class="feature-stat">Cloud-powered</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="ai-cta-banner">
-                <div class="ai-cta-content">
-                    <h3>Ready to find your perfect vase?</h3>
-                    <p>Join thousands of satisfied customers who found their ideal match using our AI</p>
-                </div>
-                <a href="#visualizer" class="btn btn-primary-dark">Try It Now - It's Free</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Collections Grid -->
-    <section id="collections" class="section collections-showcase">
-        <div class="section-header-luxury">
-            <p class="section-eyebrow">Curated by experts</p>
-            <h2 class="section-title-luxury">Featured Collections</h2>
-            <p class="section-description-luxury">
-                From minimalist modern to rustic handcrafted, discover vessels that
-                complement your unique aesthetic and elevate your botanical displays.
-            </p>
-        </div>
-
-        <!-- Collection Filters -->
-        <div class="collection-filters">
-            <button class="filter-btn active" data-filter="all">All Collections</button>
-            <button class="filter-btn" data-filter="ceramic">Ceramic</button>
-            <button class="filter-btn" data-filter="terracotta">Terracotta</button>
-            <button class="filter-btn" data-filter="modern">Modern</button>
-            <button class="filter-btn" data-filter="artisan">Artisan</button>
-        </div>
-
-        <!-- Products Grid -->
-        <div class="products-grid-luxury">
-            <!-- Product 1 -->
-            <div class="product-card-luxury" data-category="ceramic artisan">
-                <div class="product-image-container">
-                    <img src="./assets/images/product-1.jpg"
-                         alt="Handcrafted Ceramic Planter" class="product-image">
-                    <div class="product-overlay">
-                        <button class="btn-overlay">Quick View</button>
-                    </div>
-                    <div class="product-tag">Bestseller</div>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">Artisan Ceramic</div>
-                    <h3 class="product-title">Kyoto Collection Planter</h3>
-                    <p class="product-description">Hand-thrown ceramic with reactive glaze finish</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹3,499</span>
-                        <button class="btn-add-cart">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
-                                <circle cx="9" cy="21" r="1"/>
-                                <circle cx="20" cy="21" r="1"/>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card-luxury" data-category="modern">
-                <div class="product-image-container">
-                    <img src="./assets/images/product-2.jpg"
-                         alt="Modern Minimalist Planter" class="product-image">
-                    <div class="product-overlay">
-                        <button class="btn-overlay">Quick View</button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">Modern Minimalist</div>
-                    <h3 class="product-title">Scandi White Collection</h3>
-                    <p class="product-description">Matte finish with clean geometric lines</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹2,799</span>
-                        <button class="btn-add-cart">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
-                                <circle cx="9" cy="21" r="1"/>
-                                <circle cx="20" cy="21" r="1"/>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card-luxury" data-category="terracotta">
-                <div class="product-image-container">
-                    <img src="./assets/images/product-3.jpg"
-                         alt="Terracotta Pot Collection" class="product-image">
-                    <div class="product-overlay">
-                        <button class="btn-overlay">Quick View</button>
-                    </div>
-                    <div class="product-tag">Eco-Friendly</div>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">Natural Terracotta</div>
-                    <h3 class="product-title">Mediterranean Classics</h3>
-                    <p class="product-description">Traditional Italian terracotta craftsmanship</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹1,899</span>
-                        <button class="btn-add-cart">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
-                                <circle cx="9" cy="21" r="1"/>
-                                <circle cx="20" cy="21" r="1"/>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card-luxury" data-category="ceramic modern">
-                <div class="product-image-container">
-                    <img src="./assets/images/product-4.jpg"
-                         alt="Designer Ceramic Vase" class="product-image">
-                    <div class="product-overlay">
-                        <button class="btn-overlay">Quick View</button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">Designer Ceramic</div>
-                    <h3 class="product-title">Architectural Series</h3>
-                    <p class="product-description">Bold forms with sculptural presence</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹4,999</span>
-                        <button class="btn-add-cart">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
-                                <circle cx="9" cy="21" r="1"/>
-                                <circle cx="20" cy="21" r="1"/>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 5 -->
-            <div class="product-card-luxury" data-category="ceramic artisan">
-                <div class="product-image-container">
-                    <img src="./assets/images/product-5.jpg"
-                         alt="Artisan Glazed Pot" class="product-image">
-                    <div class="product-overlay">
-                        <button class="btn-overlay">Quick View</button>
-                    </div>
-                    <div class="product-tag">Limited Edition</div>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">Artisan Glazed</div>
-                    <h3 class="product-title">Jade Garden Collection</h3>
-                    <p class="product-description">Lustrous green glaze with brass accents</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹5,499</span>
-                        <button class="btn-add-cart">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
-                                <circle cx="9" cy="21" r="1"/>
-                                <circle cx="20" cy="21" r="1"/>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 6 -->
-            <div class="product-card-luxury" data-category="modern">
-                <div class="product-image-container">
-                    <img src="./assets/images/product-6.jpg"
-                         alt="Hanging Planter Set" class="product-image">
-                    <div class="product-overlay">
-                        <button class="btn-overlay">Quick View</button>
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">Hanging Collection</div>
-                    <h3 class="product-title">Suspended Gardens</h3>
-                    <p class="product-description">Set of 3 with macramé hangers included</p>
-                    <div class="product-footer">
-                        <span class="product-price">₹3,299</span>
-                        <button class="btn-add-cart">
-                            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
-                                <circle cx="9" cy="21" r="1"/>
-                                <circle cx="20" cy="21" r="1"/>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-cta">
-            <a href="#all-products" class="btn btn-secondary-outline">View All Products</a>
-        </div>
-    </section>
-
-    <!-- Materials & Craftsmanship -->
-    <section id="materials" class="section materials-section">
-        <div class="materials-grid">
-            <div class="materials-visual">
-                <img src="./assets/images/craftsman.jpg"
-                     alt="Artisan Crafting Pottery" class="materials-image">
-                <div class="materials-stat-overlay">
-                    <div class="stat-overlay-item">
-                        <span class="stat-overlay-number">15+</span>
-                        <span class="stat-overlay-label">Years Experience</span>
-                    </div>
-                </div>
-            </div>
-            <div class="materials-content">
-                <p class="section-eyebrow">Craftsmanship</p>
-                <h2 class="section-title-luxury">Made by Masters</h2>
-                <p class="materials-lead">
-                    Each piece in our collection is selected for its exceptional quality,
-                    unique character, and the artisan story behind it.
-                </p>
-                <div class="materials-features">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M12 6v6l4 2"/>
-                            </svg>
-                        </div>
-                        <div class="feature-text">
-                            <h4>Handcrafted Excellence</h4>
-                            <p>Every vessel is individually crafted by skilled artisans using time-honored techniques</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                <path d="M2 17l10 5 10-5"/>
-                                <path d="M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                        <div class="feature-text">
-                            <h4>Premium Materials</h4>
-                            <p>Sourced from the finest clay deposits and finished with non-toxic glazes</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
-                        </div>
-                        <div class="feature-text">
-                            <h4>Unique Character</h4>
-                            <p>Subtle variations in color and texture make each piece truly one-of-a-kind</p>
-                        </div>
-                    </div>
-                </div>
-                <a href="#about" class="btn-text-link">
-                    Learn More About Our Process
-                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
-                        <line x1="5" y1="12" x2="19" y2="12"/>
-                        <polyline points="12 5 19 12 12 19"/>
+                <div class="control-hint">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6M7.05 7.05l4.95 4.95m0 0l4.95 4.95m-9.9 0l4.95-4.95"/>
                     </svg>
-                </a>
+                    <span>Auto-rotates</span>
+                </div>
+            </div>
+
+            <!-- Info Overlay -->
+            <div class="placement-info">
+                <h3 class="placement-title">Living Room Sofa Corner</h3>
+                <div class="placement-details">
+                    <div class="placement-detail">
+                        <div class="detail-icon">💡</div>
+                        <div class="detail-content">
+                            <strong>Lighting:</strong> Natural side lighting enhances the flower colors
+                        </div>
+                    </div>
+                    <div class="placement-detail">
+                        <div class="detail-icon">📏</div>
+                        <div class="detail-content">
+                            <strong>Height:</strong> Eye level when seated for optimal viewing
+                        </div>
+                    </div>
+                    <div class="placement-detail">
+                        <div class="detail-icon">🎨</div>
+                        <div class="detail-content">
+                            <strong>Color Harmony:</strong> Soft pinks complement neutral furniture tones
+                        </div>
+                    </div>
+                    <div class="placement-detail">
+                        <div class="detail-icon">🌸</div>
+                        <div class="detail-content">
+                            <strong>Vessel:</strong> Elegant ceramic vase matches the room's aesthetic
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Hotspots -->
+            <div class="hotspot hotspot-1" data-info="flowers">
+                <div class="hotspot-pulse"></div>
+                <div class="hotspot-tooltip">
+                    <strong>Premium Peonies</strong>
+                    <p>Soft pink blooms create a welcoming atmosphere</p>
+                </div>
+            </div>
+            <div class="hotspot hotspot-2" data-info="vase">
+                <div class="hotspot-pulse"></div>
+                <div class="hotspot-tooltip">
+                    <strong>Hand-Crafted Vase</strong>
+                    <p>Artisan ceramic with matte finish</p>
+                </div>
+            </div>
+            <div class="hotspot hotspot-3" data-info="position">
+                <div class="hotspot-pulse"></div>
+                <div class="hotspot-tooltip">
+                    <strong>Strategic Position</strong>
+                    <p>Corner placement balances the room's visual weight</p>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- Styling Guide -->
-    <section id="styling" class="section styling-guide">
-        <div class="section-header-luxury center">
-            <p class="section-eyebrow">Interior Inspiration</p>
-            <h2 class="section-title-luxury">Styling Your Space</h2>
-            <p class="section-description-luxury">
-                Expert tips on selecting the perfect planter for your interior aesthetic and plant type
-            </p>
-        </div>
-
-        <div class="styling-grid">
-            <div class="styling-card">
-                <!-- REPLACE WITH STYLED ROOM IMAGE -->
-                <div class="styling-image">
-                    <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=700&h=500&fit=crop"
-                         alt="Modern Living Room Styling">
+        <!-- Room Scenarios -->
+        <div class="scenarios-grid">
+            <div class="scenario-card" data-scenario="living">
+                <div class="scenario-image">
+                    <div class="scenario-placeholder living-room-bg"></div>
                 </div>
-                <div class="styling-content">
-                    <h3>Minimalist Modern</h3>
-                    <p>Clean lines and neutral tones create serene spaces. Pair architectural plants with geometric planters in matte finishes.</p>
-                    <ul class="styling-tips">
-                        <li>Choose monochromatic color palettes</li>
-                        <li>Opt for simple, geometric shapes</li>
-                        <li>Consider negative space</li>
+                <div class="scenario-content">
+                    <h3>Living Room Elegance</h3>
+                    <p>Side table arrangements that complement your seating area without overwhelming the space.</p>
+                    <ul class="scenario-tips">
+                        <li>Height: 12-18 inches for visibility</li>
+                        <li>Placement: Next to sofa or armchair</li>
+                        <li>Style: Soft, organic arrangements</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="styling-card">
-                <div class="styling-image">
-                    <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=700&h=500&fit=crop"
-                         alt="Bohemian Styling">
+            <div class="scenario-card" data-scenario="office">
+                <div class="scenario-image">
+                    <div class="scenario-placeholder office-bg"></div>
                 </div>
-                <div class="styling-content">
-                    <h3>Bohemian Eclectic</h3>
-                    <p>Mix textures and patterns fearlessly. Terracotta and ceramic in warm earth tones complement lush, trailing greenery.</p>
-                    <ul class="styling-tips">
-                        <li>Layer different heights and sizes</li>
-                        <li>Embrace handcrafted imperfections</li>
-                        <li>Add woven and macramé accents</li>
+                <div class="scenario-content">
+                    <h3>Executive Office</h3>
+                    <p>Sophisticated desk arrangements that inspire productivity and create a professional atmosphere.</p>
+                    <ul class="scenario-tips">
+                        <li>Height: 8-12 inches to avoid sightlines</li>
+                        <li>Placement: Corner of desk or credenza</li>
+                        <li>Style: Structured, architectural blooms</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="styling-card">
-                <div class="styling-image">
-                    <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=700&h=500&fit=crop"
-                         alt="Scandinavian Styling">
+            <div class="scenario-card" data-scenario="dining">
+                <div class="scenario-image">
+                    <div class="scenario-placeholder dining-bg"></div>
                 </div>
-                <div class="styling-content">
-                    <h3>Scandinavian Serenity</h3>
-                    <p>Light wood tones and white ceramics bring hygge warmth. Keep displays simple and intentional for maximum impact.</p>
-                    <ul class="styling-tips">
-                        <li>Focus on quality over quantity</li>
-                        <li>Use natural materials</li>
-                        <li>Maximize natural light exposure</li>
+                <div class="scenario-content">
+                    <h3>Dining Centerpiece</h3>
+                    <p>Low, lush arrangements that enhance conversation without blocking views across the table.</p>
+                    <ul class="scenario-tips">
+                        <li>Height: 6-10 inches maximum</li>
+                        <li>Placement: Table center or runner</li>
+                        <li>Style: 360° viewing, compact design</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="scenario-card" data-scenario="entrance">
+                <div class="scenario-image">
+                    <div class="scenario-placeholder entrance-bg"></div>
+                </div>
+                <div class="scenario-content">
+                    <h3>Grand Entrance</h3>
+                    <p>Statement pieces that create an impressive first impression in foyers and entryways.</p>
+                    <ul class="scenario-tips">
+                        <li>Height: 24-36 inches for impact</li>
+                        <li>Placement: Console table or pedestal</li>
+                        <li>Style: Bold, dramatic compositions</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Size Guide -->
-    <section class="section size-guide">
-        <div class="size-guide-container">
-            <div class="size-guide-content">
-                <p class="section-eyebrow">Choosing the right fit</p>
-                <h2 class="section-title-luxury">Size Guide</h2>
-                <p class="size-description">
-                    Select planters based on your plant's root system and growth pattern.
-                    Our sizing ensures proper drainage and root development.
-                </p>
+    <!-- Process Section -->
+    <section id="process" class="section process">
+        <div class="section-header">
+            <div class="section-subtitle">How We Work</div>
+            <h2 class="section-title">Our Meticulous Process</h2>
+        </div>
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="process-number">01</div>
+                <div class="process-content">
+                    <h3 class="process-title">Consultation</h3>
+                    <p class="process-description">
+                        We begin with an in-depth consultation to understand your vision,
+                        space, and preferences. Every detail matters.
+                    </p>
+                </div>
             </div>
-            <div class="size-chart">
-                <div class="size-option">
-                    <div class="size-visual small"></div>
-                    <div class="size-details">
-                        <h4>Small</h4>
-                        <p class="size-dimensions">Ø 10-15 cm</p>
-                        <p class="size-ideal">Ideal for succulents, cacti, small herbs</p>
-                    </div>
+            <div class="process-step">
+                <div class="process-number">02</div>
+                <div class="process-content">
+                    <h3 class="process-title">Curation</h3>
+                    <p class="process-description">
+                        Our experts hand-select premium flowers and complementary vessels,
+                        creating a cohesive design concept for your approval.
+                    </p>
                 </div>
-                <div class="size-option">
-                    <div class="size-visual medium"></div>
-                    <div class="size-details">
-                        <h4>Medium</h4>
-                        <p class="size-dimensions">Ø 18-25 cm</p>
-                        <p class="size-ideal">Perfect for snake plants, pothos, ferns</p>
-                    </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">03</div>
+                <div class="process-content">
+                    <h3 class="process-title">Creation</h3>
+                    <p class="process-description">
+                        Master florists craft each arrangement with precision and artistry,
+                        ensuring perfection in every petal and stem.
+                    </p>
                 </div>
-                <div class="size-option">
-                    <div class="size-visual large"></div>
-                    <div class="size-details">
-                        <h4>Large</h4>
-                        <p class="size-dimensions">Ø 30-40 cm</p>
-                        <p class="size-ideal">Best for monstera, fiddle leaf, floor plants</p>
-                    </div>
-                </div>
-                <div class="size-option">
-                    <div class="size-visual xlarge"></div>
-                    <div class="size-details">
-                        <h4>Extra Large</h4>
-                        <p class="size-dimensions">Ø 45+ cm</p>
-                        <p class="size-ideal">Statement pieces for trees and palms</p>
-                    </div>
+            </div>
+            <div class="process-step">
+                <div class="process-number">04</div>
+                <div class="process-content">
+                    <h3 class="process-title">Placement</h3>
+                    <p class="process-description">
+                        We deliver and professionally place each arrangement in your space,
+                        optimizing lighting, positioning, and overall aesthetic harmony.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section testimonials-luxury">
-        <div class="section-header-luxury center">
-            <p class="section-eyebrow">Customer Stories</p>
-            <h2 class="section-title-luxury">Loved by Plant Enthusiasts</h2>
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery">
+        <div class="section-header">
+            <div class="section-subtitle">Our Work</div>
+            <h2 class="section-title">Floral Masterpieces</h2>
         </div>
-
-        <div class="testimonials-carousel">
-            <div class="testimonial-card-luxury">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">
-                    "The quality is exceptional. Each piece feels like a work of art. My monstera has never looked better!"
-                </p>
-                <div class="testimonial-author">
-                    <img src="https://i.pravatar.cc/100?img=1" alt="Customer" class="author-photo">
-                    <div class="author-details">
-                        <p class="author-name">Priya Sharma</p>
-                        <p class="author-location">Mumbai</p>
-                    </div>
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="arrangements">
+                <div class="gallery-image-placeholder rose-gradient">
+                    <div class="placeholder-text">Elegant Rose Collection</div>
                 </div>
             </div>
-
-            <div class="testimonial-card-luxury">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">
-                    "Absolutely in love with my purchase! The craftsmanship is visible in every detail. Worth every rupee."
-                </p>
-                <div class="testimonial-author">
-                    <img src="https://i.pravatar.cc/100?img=5" alt="Customer" class="author-photo">
-                    <div class="author-details">
-                        <p class="author-name">Rahul Mehta</p>
-                        <p class="author-location">Bangalore</p>
-                    </div>
+            <div class="gallery-item" data-category="events">
+                <div class="gallery-image-placeholder event-gradient">
+                    <div class="placeholder-text">Corporate Event Design</div>
                 </div>
             </div>
-
-            <div class="testimonial-card-luxury">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-quote">
-                    "Perfect for my minimalist home. The white ceramic collection is stunning and exactly as pictured."
-                </p>
-                <div class="testimonial-author">
-                    <img src="https://i.pravatar.cc/100?img=9" alt="Customer" class="author-photo">
-                    <div class="author-details">
-                        <p class="author-name">Anjali Desai</p>
-                        <p class="author-location">Delhi</p>
-                    </div>
+            <div class="gallery-item" data-category="residential">
+                <div class="gallery-image-placeholder luxury-gradient">
+                    <div class="placeholder-text">Luxury Home Styling</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="arrangements">
+                <div class="gallery-image-placeholder orchid-gradient">
+                    <div class="placeholder-text">Orchid Centerpiece</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="seasonal">
+                <div class="gallery-image-placeholder spring-gradient">
+                    <div class="placeholder-text">Spring Collection</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-category="residential">
+                <div class="gallery-image-placeholder penthouse-gradient">
+                    <div class="placeholder-text">Penthouse Arrangement</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About / Story -->
-    <section id="about" class="section about-story">
-        <div class="about-grid">
+    <!-- About Us Section -->
+    <section id="about" class="section about">
+        <div class="about-container">
             <div class="about-content">
-                <p class="section-eyebrow">Our Story</p>
-                <h2 class="section-title-luxury">Rooted in Passion</h2>
+                <div class="section-subtitle">Our Story</div>
+                <h2 class="section-title">Crafting Beauty Since 2009</h2>
                 <div class="about-text">
-                    <p class="lead">
-                        Midori Gardens began with a simple belief: the vessels we choose for our plants
-                        are just as important as the plants themselves.
+                    <p>
+                        Midori Flowers was born from a simple belief: flowers are not mere decoration — they are living art that transforms spaces and elevates everyday moments into extraordinary experiences.
                     </p>
                     <p>
-                        Founded in 2015, we've spent nearly a decade building relationships with master
-                        ceramicists, traditional potters, and innovative designers across India and beyond.
-                        Each piece in our collection represents hours of skilled handwork and a commitment
-                        to sustainable, thoughtful design.
+                        Founded by master florist Yuki Tanaka, who trained under renowned floral designers in Tokyo and Paris, we've spent over 15 years perfecting the delicate balance between botanical science and artistic expression. What started as a boutique studio has grown into a trusted partner for the city's most discerning homeowners, Fortune 500 companies, and celebrated event planners.
                     </p>
                     <p>
-                        We believe in the transformative power of bringing nature indoors. The right planter
-                        doesn't just hold soil—it elevates your entire space, turning plants into living art.
+                        We travel directly to flower farms across the Netherlands, Ecuador, and Japan, hand-selecting only the most exquisite blooms. Our relationships with artisan ceramicists and vessel makers ensure that every element of your arrangement is thoughtfully curated.
+                    </p>
+                    <p>
+                        But what truly sets us apart is our placement philosophy. We don't just deliver flowers — we study your space, understand how light moves through your rooms, consider sight lines and color harmonies, then position each arrangement to maximize its impact. It's floral design meets interior architecture.
                     </p>
                 </div>
                 <div class="about-values">
-                    <div class="value-badge">
-                        <span class="value-icon">🌱</span>
-                        <span class="value-text">Sustainable Sourcing</span>
+                    <div class="value-item">
+                        <div class="value-icon">🌸</div>
+                        <h4>Uncompromising Quality</h4>
+                        <p>Every bloom is personally inspected and sourced from award-winning growers</p>
                     </div>
-                    <div class="value-badge">
-                        <span class="value-icon">🤝</span>
-                        <span class="value-text">Artisan Partnerships</span>
+                    <div class="value-item">
+                        <div class="value-icon">🎨</div>
+                        <h4>Artistic Excellence</h4>
+                        <p>Our team includes trained floral designers with backgrounds in fine art and design</p>
                     </div>
-                    <div class="value-badge">
-                        <span class="value-icon">♻️</span>
-                        <span class="value-text">Eco-Conscious</span>
+                    <div class="value-item">
+                        <div class="value-icon">✨</div>
+                        <h4>Holistic Approach</h4>
+                        <p>We consider architecture, lighting, color theory, and spatial dynamics</p>
                     </div>
                 </div>
-            </div>
-            <div class="about-visual">
-                <img src="./assets/images/workshop.jpg"
-                     alt="Ceramic Workshop">
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Signup -->
-    <section class="section newsletter-section">
-        <div class="newsletter-container">
-            <div class="newsletter-content">
-                <h3 class="newsletter-title">Join Our Community</h3>
-                <p class="newsletter-description">
-                    Get exclusive access to new collections, styling tips, and special offers.
-                    Plus, 10% off your first order.
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+        <div class="section-header">
+            <div class="section-subtitle">Client Love</div>
+            <h2 class="section-title">What Our Clients Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <p class="testimonial-text">
+                    "Midori Flowers transformed our corporate lobby into an absolute showstopper. The attention to detail in both the arrangement and placement was extraordinary. Our clients constantly compliment the fresh, vibrant energy."
                 </p>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <div class="author-name">Sarah Chen</div>
+                        <div class="author-title">CEO, TechVision Inc.</div>
+                    </div>
+                </div>
             </div>
-            <form class="newsletter-form-luxury">
-                <input type="email" placeholder="Enter your email" class="newsletter-input-luxury" required>
-                <button type="submit" class="btn btn-primary-dark">Subscribe</button>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <p class="testimonial-text">
+                    "We've used Midori for our home for over 3 years. The quality never wavers, and they always know exactly what works for our space. It's like having a personal florist who truly understands our aesthetic."
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <div class="author-name">Michael & Jennifer Rodriguez</div>
+                        <div class="author-title">Pacific Heights Residents</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+                <p class="testimonial-text">
+                    "From wedding to weekly office arrangements, Midori has been our go-to. They source the most exquisite blooms and their placement service is genius - they consider lighting, color theory, everything!"
+                </p>
+                <div class="testimonial-author">
+                    <div class="author-info">
+                        <div class="author-name">Amanda Foster</div>
+                        <div class="author-title">Event Planner, Elegance Events</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section pricing">
+        <div class="section-header">
+            <div class="section-subtitle">Investment</div>
+            <h2 class="section-title">Service Packages</h2>
+            <p class="section-description">
+                Transparent pricing for premium service. All packages include consultation, sourcing, arrangement design, delivery, and professional placement.
+            </p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Signature</h3>
+                    <div class="pricing-subtitle">Perfect for homes</div>
+                </div>
+                <div class="pricing-price">
+                    <span class="price-amount">$350</span>
+                    <span class="price-period">/arrangement</span>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ Personal consultation</li>
+                    <li>✓ Premium seasonal flowers</li>
+                    <li>✓ Custom arrangement design</li>
+                    <li>✓ Artisan vase included</li>
+                    <li>✓ Professional placement</li>
+                    <li>✓ Weekly refresh available</li>
+                </ul>
+                <button class="btn btn-secondary btn-full" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
+            </div>
+
+            <div class="pricing-card featured">
+                <div class="pricing-badge">Most Popular</div>
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Premium</h3>
+                    <div class="pricing-subtitle">Ideal for offices & events</div>
+                </div>
+                <div class="pricing-price">
+                    <span class="price-amount">$850</span>
+                    <span class="price-period">/arrangement</span>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ In-depth design consultation</li>
+                    <li>✓ Exotic & rare blooms</li>
+                    <li>✓ Multi-piece arrangements</li>
+                    <li>✓ Designer vase collection</li>
+                    <li>✓ Strategic placement service</li>
+                    <li>✓ Bi-weekly maintenance</li>
+                    <li>✓ Same-day delivery</li>
+                </ul>
+                <button class="btn btn-primary btn-full" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get Started</button>
+            </div>
+
+            <div class="pricing-card">
+                <div class="pricing-header">
+                    <h3 class="pricing-title">Bespoke</h3>
+                    <div class="pricing-subtitle">For luxury spaces</div>
+                </div>
+                <div class="pricing-price">
+                    <span class="price-amount">Custom</span>
+                </div>
+                <ul class="pricing-features">
+                    <li>✓ Dedicated floral designer</li>
+                    <li>✓ Unlimited consultations</li>
+                    <li>✓ Exclusive rare specimens</li>
+                    <li>✓ Museum-quality vessels</li>
+                    <li>✓ Full-service maintenance</li>
+                    <li>✓ Multiple locations</li>
+                    <li>✓ Priority 24/7 service</li>
+                    <li>✓ Seasonal portfolio</li>
+                </ul>
+                <button class="btn btn-secondary btn-full" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Contact Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section faq">
+        <div class="section-header">
+            <div class="section-subtitle">Questions</div>
+            <h2 class="section-title">Frequently Asked</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I book a consultation?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Simply fill out our contact form or call us directly. We'll schedule a convenient time to visit your space (or discuss via video call) to understand your vision, measure the area, assess lighting, and discuss your preferences. Consultations are always complimentary.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What's included in the placement service?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Our placement experts consider lighting angles, sight lines, color harmony with your existing decor, and optimal viewing positions. We physically place the arrangement, adjust for perfect positioning, and ensure everything is stable and safe. Think of it as floral interior design.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How long do arrangements last?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>With proper care, our arrangements typically last 7-14 days depending on the flowers used. We source only the freshest blooms and provide detailed care instructions. Many clients opt for our weekly or bi-weekly refresh service to maintain continuous beauty.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you provide vases, or do I need my own?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>All our packages include a carefully selected vase that complements both the flowers and your space. We have relationships with artisan ceramicists and source vessels specifically for each arrangement. The vase is yours to keep.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can you work within a specific color palette?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! During consultation, we discuss your color preferences, existing decor, and the mood you want to create. We can work within specific palettes, match brand colors for corporate clients, or create seasonal themes. Customization is our specialty.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What areas do you serve?</h3>
+                    <svg class="faq-icon" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="faq-answer">
+                    <p>We primarily serve the greater metropolitan area within a 50-mile radius. For premium and bespoke clients, we're happy to discuss extended service areas. Corporate contracts and special events may qualify for travel to additional locations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="section-subtitle">Get in Touch</div>
+                <h2 class="section-title">Let's Create Something Beautiful</h2>
+                <p class="contact-description">
+                    Ready to transform your space with premium floral design?
+                    Book a consultation with our team today.
+                </p>
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📧</div>
+                        <div>
+                            <div class="contact-detail-label">Email</div>
+                            <div class="contact-detail-value">hello@midoriflowers.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📱</div>
+                        <div>
+                            <div class="contact-detail-label">Phone</div>
+                            <div class="contact-detail-value">+1 (555) 123-4567</div>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <div class="contact-detail-icon">📍</div>
+                        <div>
+                            <div class="contact-detail-label">Showroom</div>
+                            <div class="contact-detail-value">By Appointment Only</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" class="form-input">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Tell us about your vision..." class="form-input form-textarea" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Request Consultation</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer-luxury">
-        <div class="footer-main">
-            <div class="footer-column footer-brand">
-                <div class="footer-logo">
-                    <img src="assets/images/Midori-Logo.png" alt="Midori Gardens Logo">
-                </div>
-                <p class="footer-tagline">
-                    Curating artisan planters and vessels for discerning spaces since 2015.
-                </p>
-                <div class="footer-social">
-                    <a href="#" class="social-icon" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Pinterest">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
-                        </svg>
-                    </a>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <div class="footer-logo">MIDORI FLOWERS</div>
+                <p class="footer-tagline">Premium floral curation for discerning clients since 2009</p>
+                <div class="footer-contact">
+                    <p><strong>Email:</strong> hello@midoriflowers.com</p>
+                    <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                    <p><strong>Hours:</strong> Mon-Sat, 9AM-6PM</p>
                 </div>
             </div>
 
             <div class="footer-column">
-                <h4 class="footer-heading">Shop</h4>
+                <h4>Services</h4>
                 <ul class="footer-links">
-                    <li><a href="#collections">All Products</a></li>
-                    <li><a href="#collections">New Arrivals</a></li>
-                    <li><a href="#collections">Bestsellers</a></li>
-                    <li><a href="#collections">Sale</a></li>
+                    <li><a href="#services">Bulk Flower Sourcing</a></li>
+                    <li><a href="#services">Curated Arrangements</a></li>
+                    <li><a href="#services">Professional Placement</a></li>
+                    <li><a href="#services">Vases & Vessels</a></li>
+                    <li><a href="#pricing">View Pricing</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h4 class="footer-heading">About</h4>
+                <h4>Company</h4>
                 <ul class="footer-links">
-                    <li><a href="#about">Our Story</a></li>
-                    <li><a href="#materials">Craftsmanship</a></li>
-                    <li><a href="#styling">Styling Guide</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4 class="footer-heading">Customer Care</h4>
-                <ul class="footer-links">
-                    <li><a href="#shipping">Shipping Policy</a></li>
-                    <li><a href="#returns">Returns & Exchange</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#gallery">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#care">Plant Care Guide</a></li>
                 </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <ul class="footer-links footer-social-links">
+                    <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a></li>
+                    <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+                </ul>
+                <div class="footer-newsletter">
+                    <p>Subscribe to our newsletter for seasonal inspiration</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email" class="newsletter-input">
+                        <button class="newsletter-btn">→</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p class="footer-copyright">© 2024 Midori Gardens. All rights reserved.</p>
-            <div class="footer-legal">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
+            <div class="footer-bottom-content">
+                <p>&copy; 2024 Midori Flowers. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="#terms">Terms of Service</a>
+                    <span>•</span>
+                    <a href="#accessibility">Accessibility</a>
+                </div>
             </div>
         </div>
     </footer>
